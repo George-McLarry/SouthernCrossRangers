@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Southern Cross Rangers Store - Official merchandise and music">
+    <title>Southern Cross Rangers Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            background-color: #4a2c1b;
+            color: #3c2f2f;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2d4a1a, #4a6b2a, #2d4a1a);
+            background-size: 200% 200%;
+            animation: shiny 3s ease-in-out infinite;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        @keyframes shiny {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80px;
+        }
+
+        .logo h1 {
+            font-size: 1.8em;
+            font-family: 'Rye', cursive;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #d2b48c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2em;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #d2b48c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .cart-icon {
+            position: relative;
+            color: #d2b48c;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            color: #ffd700;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ffd700;
+            color: #3b2a1e;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2em;
+        }
+
+        .store-header {
+            text-align: center;
+            margin-bottom: 3em;
+        }
+
+        .store-header h2 {
+            font-size: 2.5em;
+            color: #3b2a1e;
+            margin-bottom: 0.5em;
+            font-family: 'Rye', cursive;
+        }
+
+        .store-header p {
+            font-size: 1.3em;
+            color: #3b2a1e;
+        }
+
+        /* Section Styles to match main site */
+        .section {
+            max-width: 1000px;
+            margin: 3em auto;
+            padding: 2em;
+            background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            background-color: #f4e3b2;
+            box-shadow: 
+                inset 0 0 30px rgba(139, 69, 19, 0.5),
+                0 0 15px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(50, 30, 10, 0.4);
+            border-radius: 15px;
+            animation: fadeInUp 0.8s ease;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #8b4513, #d2b48c, #8b4513);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #3b2a1e;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Store Grid */
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2em;
+            margin: 2em 0;
+        }
+
+        .store-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 2em;
+            text-align: center;
+            border: 2px solid rgba(139, 69, 19, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .store-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: rgba(139, 69, 19, 0.4);
+        }
+
+        .product-image {
+            font-size: 4em;
+            color: #7a3c24;
+            margin-bottom: 1em;
+        }
+
+        .store-item h3 {
+            color: #3b2a1e;
+            margin-bottom: 0.5em;
+            font-family: 'Rye', cursive;
+            font-size: 1.3em;
+        }
+
+        .store-item p {
+            color: #3b2a1e;
+            margin-bottom: 1em;
+            font-size: 0.95em;
+        }
+
+        .price {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #7a3c24;
+            margin-bottom: 1em;
+        }
+
+        .stock-info {
+            font-size: 0.9em;
+            margin-bottom: 1em;
+            padding: 0.5em;
+            border-radius: 5px;
+        }
+
+        .in-stock {
+            background: rgba(76, 175, 80, 0.2);
+            color: #2e7d32;
+        }
+
+        .low-stock {
+            background: rgba(255, 152, 0, 0.2);
+            color: #f57c00;
+        }
+
+        .out-of-stock {
+            background: rgba(244, 67, 54, 0.2);
+            color: #d32f2f;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1em 2em;
+            background: linear-gradient(135deg, #7a3c24, #8b4513);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(122, 60, 36, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1.1em;
+            border: none;
+            font-family: inherit;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(122, 60, 36, 0.4);
+            background: linear-gradient(135deg, #8b4513, #7a3c24);
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .cart-modal.show {
+            display: flex;
+        }
+
+        .cart-content {
+            background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            background-color: #f4e3b2;
+            border-radius: 15px;
+            padding: 2em;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 
+                inset 0 0 30px rgba(139, 69, 19, 0.5),
+                0 0 15px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(50, 30, 10, 0.4);
+            border: 2px solid rgba(139, 69, 19, 0.3);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 1em;
+        }
+
+        .cart-header h3 {
+            color: #3b2a1e;
+            font-family: 'Rye', cursive;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+            color: #3b2a1e;
+        }
+
+        .cart-item-price {
+            color: #7a3c24;
+        }
+
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .quantity-btn {
+            background: #7a3c24;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity {
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .remove-item {
+            background: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5em;
+            cursor: pointer;
+        }
+
+        .cart-total {
+            margin-top: 1em;
+            padding-top: 1em;
+            border-top: 2px solid #eee;
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #3b2a1e;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            margin-top: 1em;
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+        }
+
+        .checkout-btn:hover {
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+        }
+
+        /* Payment Section */
+        .payment-section {
+            margin-top: 2em;
+            padding: 2em;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+            margin: 2em 0;
+            flex-wrap: wrap;
+        }
+
+        .payment-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 1em 2em;
+            background: white;
+            border: 2px solid #7a3c24;
+            border-radius: 8px;
+            color: #3b2a1e;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .payment-btn:hover {
+            background: #7a3c24;
+            color: white;
+        }
+
+        /* User Account Modal */
+        .user-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .user-modal.show {
+            display: flex;
+        }
+
+        .user-modal-content {
+            background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            background-color: #f4e3b2;
+            border-radius: 15px;
+            padding: 2em;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 
+                inset 0 0 30px rgba(139, 69, 19, 0.5),
+                0 0 15px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(50, 30, 10, 0.4);
+            border: 2px solid rgba(139, 69, 19, 0.3);
+        }
+
+        .user-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+            border-bottom: 2px solid rgba(139, 69, 19, 0.3);
+            padding-bottom: 1em;
+        }
+
+        .user-modal-header h3 {
+            color: #3b2a1e;
+            font-family: 'Rye', cursive;
+        }
+
+        .close-user-modal {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .user-modal-body p {
+            text-align: center;
+            margin-bottom: 1.5em;
+            color: #3b2a1e;
+        }
+
+        .login-form, .register-form {
+            display: none;
+        }
+
+        .login-form.show, .register-form.show {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1em;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: #3b2a1e;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1em;
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            background-color: #f9f6f0;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #7a3c24;
+            box-shadow: 0 0 10px rgba(122, 60, 36, 0.2);
+        }
+
+        .form-toggle {
+            background: none;
+            border: none;
+            color: #7a3c24;
+            text-decoration: underline;
+            cursor: pointer;
+            margin: 1em 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .nav-links {
+                gap: 1em;
+            }
+
+            .store-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cart-content {
+                width: 95%;
+                padding: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Southern Cross Rangers General Store</h1>
+            </div>
+            <div class="nav-links">
+                <a href="southern_cross_website (1).html">Back Home Again</a>
+                <a href="#" id="accountBtn">Join Our Family</a>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="store-header section">
+            <h2>Welcome to our Little Country Store!</h2>
+            <p>Get your hands on authentic Southern Cross Rangers merchandise and music!</p>
+        </div>
+
+        <!-- User Account Modal -->
+        <div class="user-modal" id="userModal">
+            <div class="user-modal-content">
+                <div class="user-modal-header">
+                    <h3>Join Our Family</h3>
+                    <button class="close-user-modal" id="closeUserModal">&times;</button>
+                </div>
+                <div class="user-modal-body">
+                    <p>Become part of the Southern Cross Rangers family! Track your orders, save favorites, and get exclusive updates.</p>
+                    
+                    <div class="login-form" id="loginForm">
+                        <h4>Welcome Back</h4>
+                        <form id="loginFormElement">
+                            <div class="form-group">
+                                <label for="loginEmail">Email</label>
+                                <input type="email" id="loginEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="btn">Sign In</button>
+                        </form>
+                        <button class="form-toggle" data-target="registerForm">New to our family? Join us!</button>
+                    </div>
+
+                    <div class="register-form" id="registerForm">
+                        <h4>Join Our Family</h4>
+                        <form id="registerFormElement">
+                            <div class="form-group">
+                                <label for="regName">Full Name</label>
+                                <input type="text" id="regName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regEmail">Email</label>
+                                <input type="email" id="regEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="regPassword">Password</label>
+                                <input type="password" id="regPassword" required>
+                            </div>
+                            <button type="submit" class="btn">Join Our Family</button>
+                        </form>
+                        <button class="form-toggle" data-target="loginForm">Already family? Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Store Sections -->
+        <section class="section">
+            <h2>Albums</h2>
+            <p>Albums are $20 AUD. Singles are $5 AUD. Choose CD, USB, or Digital.</p>
+            <div class="store-grid" id="albumsGrid"></div>
+        </section>
+
+        <section class="section">
+            <h2>Clothes</h2>
+            <p>Shirts, T-shirts, belt buckles and more — coming soon!</p>
+            <div class="store-grid" id="clothesGrid"></div>
+        </section>
+
+        <!-- Payment Section -->
+        <div class="payment-section">
+            <h3>Secure Payment Options</h3>
+            <p>We accept all major payment methods for your convenience</p>
+            <div class="payment-options">
+                <a href="#" class="payment-btn" id="paypalBtn">
+                    <i class="fab fa-paypal"></i>
+                    PayPal
+                </a>
+                <a href="#" class="payment-btn" id="visaBtn">
+                    <i class="fas fa-credit-card"></i>
+                    Credit/Debit Card
+                </a>
+                <a href="#" class="payment-btn" id="applePayBtn">
+                    <i class="fab fa-apple-pay"></i>
+                    Apple Pay
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="cart-total" id="cartTotal">
+                Total: $0.00
+            </div>
+            <button class="btn checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        // Store data with inventory and categories
+        const storeProducts = [
+            // Albums
+            {
+                id: 101,
+                category: 'albums',
+                name: "The One You Need",
+                description: "Full Album — Choose CD, USB, or Digital",
+                price: 20.00,
+                currency: 'AUD',
+                stock: 100,
+                icon: "fas fa-compact-disc",
+                formats: ["CD", "USB", "Digital"]
+            },
+            {
+                id: 102,
+                category: 'albums',
+                name: "Album 2 ~ coming soon!",
+                description: "Not available yet",
+                price: 20.00,
+                currency: 'AUD',
+                stock: 0,
+                icon: "fas fa-compact-disc",
+                formats: ["CD", "USB", "Digital"]
+            },
+            {
+                id: 103,
+                category: 'albums',
+                name: "Single Track",
+                description: "Choose your favorite track",
+                price: 5.00,
+                currency: 'AUD',
+                stock: 1000,
+                icon: "fas fa-music",
+                formats: ["Digital"]
+            },
+
+            // Clothes (coming soon)
+            {
+                id: 201,
+                category: 'clothes',
+                name: "Shirts",
+                description: "Coming soon",
+                price: 0,
+                currency: 'AUD',
+                stock: 0,
+                icon: "fas fa-shirt"
+            },
+            {
+                id: 202,
+                category: 'clothes',
+                name: "T-Shirts",
+                description: "Coming soon",
+                price: 0,
+                currency: 'AUD',
+                stock: 0,
+                icon: "fas fa-tshirt"
+            },
+            {
+                id: 203,
+                category: 'clothes',
+                name: "Belt Buckles",
+                description: "Coming soon",
+                price: 0,
+                currency: 'AUD',
+                stock: 0,
+                icon: "fas fa-ring"
+            }
+        ];
+
+        let cart = [];
+        let currentUser = null;
+
+        // Initialize store
+        document.addEventListener('DOMContentLoaded', function() {
+            renderStore();
+            updateCartDisplay();
+            setupEventListeners();
+        });
+
+        function renderStore() {
+            const albumsGrid = document.getElementById('albumsGrid');
+            const clothesGrid = document.getElementById('clothesGrid');
+            albumsGrid.innerHTML = '';
+            clothesGrid.innerHTML = '';
+
+            storeProducts.forEach(product => {
+                const stockClass = product.stock === 0 ? 'out-of-stock' : 
+                                 product.stock <= 5 ? 'low-stock' : 'in-stock';
+                const stockText = product.stock === 0 ? 'Out of Stock' : 
+                                 product.stock <= 5 ? `Only ${product.stock} left!` : 'In Stock';
+
+                const storeItem = document.createElement('div');
+                storeItem.className = 'store-item';
+
+                const formatSelect = product.formats && product.formats.length
+                    ? `<div style="margin: 0.5em 0 1em;">
+                            <label for="format-${product.id}" style="display:block; font-weight:bold; color:#3b2a1e; margin-bottom:0.3em;">Format</label>
+                            <select id="format-${product.id}" style="width:100%; padding:0.8em; border:2px solid #8b4513; border-radius:8px; background-color:#f4e3b2;">
+                                ${product.formats.map(f => `<option value="${f}">${f}</option>`).join('')}
+                            </select>
+                       </div>`
+                    : '';
+
+                storeItem.innerHTML = `
+                    <div class="product-image">
+                        <i class="${product.icon}"></i>
+                    </div>
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <div class="price">$${product.price.toFixed(2)} ${product.currency || ''}</div>
+                    ${formatSelect}
+                    <div class="stock-info ${stockClass}">${stockText}</div>
+                    <button class="btn" ${product.stock === 0 ? 'disabled' : ''} 
+                            onclick="addToCart(${product.id})">
+                        ${product.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
+                    </button>
+                `;
+
+                if (product.category === 'albums') {
+                    albumsGrid.appendChild(storeItem);
+                } else if (product.category === 'clothes') {
+                    clothesGrid.appendChild(storeItem);
+                }
+            });
+        }
+
+        function addToCart(productId) {
+            const product = storeProducts.find(p => p.id === productId);
+            if (!product || product.stock === 0) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                let selectedFormat = null;
+                const selectEl = document.getElementById(`format-${product.id}`);
+                if (selectEl) {
+                    selectedFormat = selectEl.value;
+                }
+                cart.push({...product, quantity: 1, selectedFormat});
+            }
+
+            product.stock -= 1;
+            updateCartDisplay();
+            renderStore();
+            showCartNotification(product.name);
+        }
+
+        function removeFromCart(productId) {
+            const cartIndex = cart.findIndex(item => item.id === productId);
+            if (cartIndex === -1) return;
+
+            const cartItem = cart[cartIndex];
+            cartItem.quantity -= 1;
+
+            if (cartItem.quantity === 0) {
+                cart.splice(cartIndex, 1);
+            }
+
+            // Restore stock
+            const product = storeProducts.find(p => p.id === productId);
+            if (product) {
+                product.stock += 1;
+            }
+
+            updateCartDisplay();
+            renderStore();
+        }
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Your cart is empty</p>';
+                cartTotal.textContent = 'Total: $0.00';
+                return;
+            }
+
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}${item.selectedFormat ? ` — ${item.selectedFormat}` : ''}</div>
+                        <div class="cart-item-price">$${item.price.toFixed(2)} each</div>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        <button class="remove-item" onclick="removeFromCart(${item.id})">Remove</button>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+            });
+
+            cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        function updateQuantity(productId, change) {
+            const cartItem = cart.find(item => item.id === productId);
+            if (!cartItem) return;
+
+            const newQuantity = cartItem.quantity + change;
+            if (newQuantity <= 0) {
+                removeFromCart(productId);
+            } else {
+                cartItem.quantity = newQuantity;
+                updateCartDisplay();
+            }
+        }
+
+        function showCartNotification(productName) {
+            // Create notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: linear-gradient(135deg, #7a3c24, #8b4513);
+                color: white;
+                padding: 1em 2em;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${productName} added to cart!</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        function setupEventListeners() {
+            // Cart modal
+            document.getElementById('cartIcon').addEventListener('click', () => {
+                document.getElementById('cartModal').classList.add('show');
+            });
+
+            document.getElementById('closeCart').addEventListener('click', () => {
+                document.getElementById('cartModal').classList.remove('show');
+            });
+
+            // Close cart when clicking outside
+            document.getElementById('cartModal').addEventListener('click', (e) => {
+                if (e.target.id === 'cartModal') {
+                    document.getElementById('cartModal').classList.remove('show');
+                }
+            });
+
+            // Checkout
+            document.getElementById('checkoutBtn').addEventListener('click', () => {
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                
+                if (!currentUser) {
+                    alert('Please sign in to proceed with checkout');
+                    return;
+                }
+
+                // Simulate checkout process
+                alert('Redirecting to secure payment...');
+                // Here you would integrate with PayPal, Stripe, etc.
+            });
+
+            // User account modal
+            document.getElementById('accountBtn').addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('userModal').classList.add('show');
+            });
+
+            document.getElementById('closeUserModal').addEventListener('click', () => {
+                document.getElementById('userModal').classList.remove('show');
+            });
+
+            // Close modal when clicking outside
+            document.getElementById('userModal').addEventListener('click', (e) => {
+                if (e.target.id === 'userModal') {
+                    document.getElementById('userModal').classList.remove('show');
+                }
+            });
+
+            // Form toggles
+            document.querySelectorAll('.form-toggle').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.getAttribute('data-target');
+                    document.getElementById('loginForm').classList.toggle('show', target === 'loginForm');
+                    document.getElementById('registerForm').classList.toggle('show', target === 'registerForm');
+                });
+            });
+
+            // Login form
+            document.getElementById('loginFormElement').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                
+                // Simulate login
+                currentUser = { email, name: 'User' };
+                alert('Welcome back! You are now signed in.');
+                document.getElementById('loginForm').classList.remove('show');
+            });
+
+            // Register form
+            document.getElementById('registerFormElement').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('regName').value;
+                const email = document.getElementById('regEmail').value;
+                const password = document.getElementById('regPassword').value;
+                
+                // Simulate registration
+                currentUser = { email, name };
+                alert('Account created successfully! You are now signed in.');
+                document.getElementById('registerForm').classList.remove('show');
+            });
+
+            // Payment buttons
+            document.getElementById('paypalBtn').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                alert('Redirecting to PayPal...');
+            });
+
+            document.getElementById('visaBtn').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                alert('Redirecting to secure card payment...');
+            });
+
+            document.getElementById('applePayBtn').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (cart.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                alert('Redirecting to Apple Pay...');
+            });
+        }
+
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

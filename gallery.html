@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Southern Cross Rangers Photo Gallery - Moments from the road, studio, and stage">
+    <meta name="keywords" content="Southern Cross Rangers, George McLarry, country music photos, live performances, studio sessions, Tasmania">
+    <meta name="author" content="George McLarry">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Southern Cross Rangers Photo Gallery">
+    <meta property="og:description" content="Behind the scenes photos from Southern Cross Rangers - live performances, studio sessions, and country life">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://southerncrossrangers.com/gallery">
+    <link rel="canonical" href="https://southerncrossrangers.com/gallery">
+    <title>Photo Gallery - Southern Cross Rangers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            background-color: #4a2c1b;
+            color: #3c2f2f;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2d4a1a, #4a6b2a, #2d4a1a);
+            background-size: 200% 200%;
+            animation: shiny 3s ease-in-out infinite;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        @keyframes shiny {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80px;
+        }
+
+        .logo h1 {
+            font-size: 1.8em;
+            font-family: 'Rye', cursive;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #d2b48c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2em;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #d2b48c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2em;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3em;
+        }
+
+        .gallery-header h2 {
+            font-size: 2.5em;
+            color: #3b2a1e;
+            margin-bottom: 0.5em;
+            font-family: 'Rye', cursive;
+        }
+
+        .gallery-header p {
+            font-size: 1.3em;
+            color: #666;
+        }
+
+        /* Section Styles */
+        .section {
+            max-width: 1000px;
+            margin: 3em auto;
+            padding: 2em;
+            background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            background-color: #f4e3b2;
+            box-shadow: 
+                inset 0 0 30px rgba(139, 69, 19, 0.5),
+                0 0 15px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(50, 30, 10, 0.4);
+            border-radius: 15px;
+            animation: fadeInUp 0.8s ease;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #8b4513, #d2b48c, #8b4513);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #3b2a1e;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2em;
+            margin: 2em 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(139, 69, 19, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            border-color: rgba(139, 69, 19, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1.5em;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-family: 'Rye', cursive;
+            margin-bottom: 0.5em;
+            color: #d2b48c;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9em;
+            color: #f0f0f0;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        .lightbox-title {
+            font-size: 1.5em;
+            margin-bottom: 0.5em;
+            color: #d2b48c;
+            font-family: 'Rye', cursive;
+        }
+
+        .lightbox-desc {
+            font-size: 1.1em;
+            margin-bottom: 1em;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .close-lightbox:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .nav-links {
+                gap: 1em;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1em;
+            }
+
+            .section {
+                margin: 2em 1em;
+                padding: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Southern Cross Rangers</h1>
+            </div>
+            <div class="nav-links">
+                <a href="southern_cross_website (1).html">Back to Main Site</a>
+                <a href="store.html">Store</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="gallery-header">
+            <h2>Photo Gallery</h2>
+            <p>Moments from the road, the studio, and the stage</p>
+        </div>
+
+        <section class="section">
+            <h2>Live Performances</h2>
+            <p>Capturing the energy and passion of our live shows</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-title="Acoustic Session" data-desc="Intimate performance at the local venue">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxwYXRoIGQ9Ik0yMDAgMTAwTDE1MCAyMDBMMjAwIDMwMEwyNTAgMjAwTDIwMCAxMDBaIiBmaWxsPSIjN2EzYzI0Ii8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjIwMCIgcj0iMjAiIGZpbGw9IiNkMmI0OGMiLz4KPHR0ZXh0IHg9IjIwMCIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjM2IyYTFlIiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0iQXJpYWwiPkd1aXRhcjwvdGV4dD4KPHN2Zz4K" alt="Acoustic guitar performance">
+                    <div class="gallery-overlay">
+                        <h3>Acoustic Session</h3>
+                        <p>Intimate performance at the local venue</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Concert Crowd" data-desc="Sharing music with fans">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjI1MCIgcj0iMjAiIGZpbGw9IiM3YTNjMjQiLz4KPGNpcmNsZSBjeD0iMjAwIiBjeT0iMjgwIiByPSIyMCIgZmlsbD0iIzdhM2MyNCIvPgo8Y2lyY2xlIGN4PSIzMDAiIGN5PSIyNDAiIHI9IjIwIiBmaWxsPSIjN2EzYzI0Ii8+CjxyZWN0IHg9IjE1MCIgeT0iMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZDJiNDhjIi8+CjxyZWN0IHg9IjE4MCIgeT0iMTMwIiB3aWR0aD0iNDAiIGhlaWdodD0iMjAiIGZpbGw9IiMzYjJhMWUiLz4KPHR0ZXh0IHg9IjIwMCIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjM2IyYTFlIiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0iQXJpYWwiPkNvbmNlcnQ8L3RleHQ+Cjwvc3ZnPgo=" alt="Concert crowd">
+                    <div class="gallery-overlay">
+                        <h3>Concert Crowd</h3>
+                        <p>Sharing music with fans</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Stage Performance" data-desc="Full band setup on stage">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxlbGxpcHNlIGN4PSIyMDAiIGN5PSIyMDAiIHJ4PSIxMDAiIHJ5PSIxNjAiIGZpbGw9IiM3YTNjMjQiLz4KPGVsbGlwc2UgY3g9IjIwMCIgY3k9IjIwMCIgcng9IjYwIiByeT0iMTAwIiBmaWxsPSIjZDJiNDhjIi8+CjxsaW5lIHgxPSIyMDAiIHkxPSI1MCIgeDI9IjIwMCIgeTI9IjM1MCIgc3Ryb2tlPSIjM2IyYTFlIiBzdHJva2Utd2lkdGg9IjMiLz4KPGxpbmUgeDE9IjE3MCIgeTE9IjUwIiB4Mj0iMTcwIiB5Mj0iMzUwIiBzdHJva2U9IiMzYjJhMWUiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iMjMwIiB5MT0iNTAiIHgyPSIyMzAiIHkyPSIzNTAiIHN0cm9rZT0iIzNiMmExZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjgwIiByPSI4IiBmaWxsPSIjM2IyYTFlIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjMyMCIgcj0iOCIgZmlsbD0iIzNiMmExZSIvPgo8dGV4dCB4PSIyMDAiIHk9IjM4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNiMmExZSIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9IkFyaWFsIj5HdWl0YXI8L3RleHQ+Cjwvc3ZnPgo=" alt="Guitar close-up">
+                    <div class="gallery-overlay">
+                        <h3>Stage Performance</h3>
+                        <p>Full band setup on stage</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Studio Sessions</h2>
+            <p>Behind the scenes in the recording studio</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-title="Recording Studio" data-desc="Recording the latest album">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxyZWN0IHg9IjEwMCIgeT0iMTUwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzdhM2MyNCIvPgo8Y2lyY2xlIGN4PSIxNTAiIGN5PSIyMDAiIHI9IjE1IiBmaWxsPSIjZDJiNDhjIi8+CjxjaXJjbGUgY3g9IjI1MCIgY3k9IjIwMCIgcj0iMTUiIGZpbGw9IiNkMmI0OGMiLz4KPHR0ZXh0IHg9IjIwMCIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjM2IyYTFlIiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0iQXJpYWwiPlN0dWRpbzwvdGV4dD4KPHN2Zz4K" alt="Recording studio session">
+                    <div class="gallery-overlay">
+                        <h3>Recording Studio</h3>
+                        <p>Recording the latest album</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Songwriting" data-desc="Where stories become songs">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxyZWN0IHg9IjUwIiB5PSIxMDAiIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjN2EzYzI0IiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjcwIiB5MT0iMTQwIiB4Mj0iMzMwIiB5Mj0iMTQwIiBzdHJva2U9IiNkMmI0OGMiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNzAiIHkxPSIxODAiIHgyPSIyNTAiIHkyPSIxODAiIHN0cm9rZT0iI2QyYjQ4YyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI3MCIgeTE9IjIyMCIgeDI9IjMwMCIgeTI9IjIyMCIgc3Ryb2tlPSIjZDJiNDhjIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjcwIiB5MT0iMjYwIiB4Mj0iMjAwIiB5Mj0iMjYwIiBzdHJva2U9IiNkMmI0OGMiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCB4PSIyMDAiIHk9IjM1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNiMmExZSIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9IkFyaWFsIj5Tb25nd3JpdGluZzwvdGV4dD4KPHN2Zz4K" alt="Songwriting session">
+                    <div class="gallery-overlay">
+                        <h3>Songwriting</h3>
+                        <p>Where stories become songs</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Mixing Board" data-desc="Fine-tuning the sound">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxyZWN0IHg9IjUwIiB5PSIxNTAiIHdpZHRoPSIzMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjM2IyYTFlIi8+CjxyZWN0IHg9IjcwIiB5PSIxNzAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI2MCIgZmlsbD0iI2QyYjQ4YyIvPgo8cmVjdCB4PSIxMDAiIHk9IjE3MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZDJiNDhjIi8+CjxyZWN0IHg9IjEzMCIgeT0iMTcwIiB3aWR0aD0iMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNkMmI0OGMiLz4KPHJlY3QgeD0iMTYwIiB5PSIxNzAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI2MCIgZmlsbD0iI2QyYjQ4YyIvPgo8cmVjdCB4PSIxOTAiIHk9IjE3MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZDJiNDhjIi8+CjxyZWN0IHg9IjIyMCIgeT0iMTcwIiB3aWR0aD0iMjAiIGhlaWdodD0iNjAiIGZpbGw9IiNkMmI0OGMiLz4KPHJlY3QgeD0iMjUwIiB5PSIxNzAiIHdpZHRoPSIyMCIgaGVpZ2h0PSI2MCIgZmlsbD0iI2QyYjQ4YyIvPgo8cmVjdCB4PSIyODAiIHk9IjE3MCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZDJiNDhjIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjM2IyYTFlIiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0iQXJpYWwiPk1peGluZzwvdGV4dD4KPHN2Zz4K" alt="Mixing board">
+                    <div class="gallery-overlay">
+                        <h3>Mixing Board</h3>
+                        <p>Fine-tuning the sound</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Country Life</h2>
+            <p>Where the music finds its inspiration</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-title="Country Roads" data-desc="Where the music finds its inspiration">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxwYXRoIGQ9Ik01MCAzMDBMMTUwIDIwMEwyNTAgMjIwTDM1MCAyMDBMMzUwIDM1MEg1MFoiIGZpbGw9IiM3YTNjMjQiLz4KPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTAwIiByPSIzMCIgZmlsbD0iI2ZmZDcwMCIvPgo8dGV4dCB4PSIyMDAiIHk9IjM4MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNiMmExZSIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9IkFyaWFsIj5MYW5kc2NhcGU8L3RleHQ+Cjwvc3ZnPgo=" alt="Country landscape">
+                    <div class="gallery-overlay">
+                        <h3>Country Roads</h3>
+                        <p>Where the music finds its inspiration</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Farm Life" data-desc="Growing up in Huon Valley">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxyZWN0IHg9IjEwMCIgeT0iMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzdhM2MyNCIvPgo8Y2lyY2xlIGN4PSIxNTAiIGN5PSIyNTAiIHI9IjE1IiBmaWxsPSIjZDJiNDhjIi8+CjxjaXJjbGUgY3g9IjI1MCIgY3k9IjI1MCIgcj0iMTUiIGZpbGw9IiNkMmI0OGMiLz4KPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSIyMCIgZmlsbD0iI2ZmZDcwMCIvPgo8dGV4dCB4PSIyMDAiIHk9IjM1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzNiMmExZSIgZm9udC1zaXplPSIxNiIgZm9udC1mYW1pbHk9IkFyaWFsIj5GYXJtPC90ZXh0Pgo8c3ZnPgo=" alt="Farm life">
+                    <div class="gallery-overlay">
+                        <h3>Farm Life</h3>
+                        <p>Growing up in Huon Valley</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-title="Sunset Jam" data-desc="Nothing beats a sunset jam session">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZjRlM2IyIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9IiNmZmQ3MDAiLz4KPGNpcmNsZSBjeD0iMjAwIiBjeT0iMjAwIiByPSI2MCIgZmlsbD0iIzdhM2MyNCIvPgo8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMDAiIHI9IjMwIiBmaWxsPSIjZDJiNDhjIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjM2IyYTFlIiBmb250LXNpemU9IjE2IiBmb250LWZhbWlseT0iQXJpYWwiPkphbTwvdGV4dD4KPHN2Zz4K" alt="Sunset jam session">
+                    <div class="gallery-overlay">
+                        <h3>Sunset Jam</h3>
+                        <p>Nothing beats a sunset jam session</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-title" id="lightboxTitle"></div>
+            <div class="lightbox-desc" id="lightboxDesc"></div>
+            <button class="close-lightbox" id="closeLightbox">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        // Lightbox functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxTitle = document.getElementById('lightboxTitle');
+            const lightboxDesc = document.getElementById('lightboxDesc');
+            const closeLightbox = document.getElementById('closeLightbox');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    const title = this.getAttribute('data-title');
+                    const desc = this.getAttribute('data-desc');
+
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightboxTitle.textContent = title;
+                    lightboxDesc.textContent = desc;
+                    lightbox.classList.add('show');
+                });
+            });
+
+            closeLightbox.addEventListener('click', () => {
+                lightbox.classList.remove('show');
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('show');
+                }
+            });
+
+            // Keyboard support
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+                    lightbox.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

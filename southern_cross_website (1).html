@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Southern Cross Rangers - Authentic country music from Tasmania, Australia. George McLarry brings you honest songs inspired by Hank Williams, Paul Overstreet, and Slim Dusty. Listen to Southern Roads album and join our community.">
+    <meta name="keywords" content="country music, Southern Cross Rangers, George McLarry, Tasmania, Australia, Hank Williams, Paul Overstreet, Slim Dusty, Southern Roads, country songs, acoustic guitar, Tamworth">
+    <meta name="author" content="George McLarry">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Southern Cross Rangers - Authentic Country Music">
+    <meta property="og:description" content="Honest country music from the heart of Tasmania. George McLarry brings you authentic songs inspired by country legends.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://southerncrossrangers.com">
+    <meta property="og:image" content="https://southerncrossrangers.com/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Southern Cross Rangers - Authentic Country Music">
+    <meta name="twitter:description" content="Honest country music from the heart of Tasmania. George McLarry brings you authentic songs inspired by country legends.">
+    <meta name="twitter:image" content="https://southerncrossrangers.com/images/twitter-image.jpg">
+    <link rel="canonical" href="https://southerncrossrangers.com">
+    <title>Southern Cross Rangers - Authentic Country Music from Tasmania</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "Southern Cross Rangers",
+        "description": "Authentic country music from Tasmania, Australia",
+        "url": "https://southerncrossrangers.com",
+        "sameAs": [
+            "https://www.youtube.com/channel/UCHHhWk-py_skZryQsmT2k3g",
+            "https://www.instagram.com/southern_cross_rangers/",
+            "https://www.facebook.com/profile.php?id=61570255802911"
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "George McLarry",
+            "description": "Country music artist from Huon Valley, Tasmania"
+        },
+        "genre": "Country Music",
+        "album": {
+            "@type": "MusicAlbum",
+            "name": "Southern Roads",
+            "description": "Digital album featuring authentic country songs"
+        }
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            background-color: #4a2c1b;
+            color: #3c2f2f;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4a2c1b, #3d4a2a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-content {
+            text-align: center;
+            color: #d2b48c;
+        }
+
+        .loader-logo {
+            font-family: 'Rye', cursive;
+            font-size: 2.5em;
+            margin-bottom: 1em;
+            animation: pulse 2s infinite;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(210, 180, 140, 0.2);
+            border-top: 3px solid #d2b48c;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #3d4a2a;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5em 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80px;
+        }
+
+        .logo h1 {
+            font-size: 1.8em;
+            font-family: 'Rye', cursive;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #d2b48c;
+        }
+
+        .header-container {
+            background: linear-gradient(135deg, #2d4a1a, #4a6b2a, #2d4a1a);
+            background-size: 200% 200%;
+            animation: shiny 3s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(74, 107, 42, 0.3);
+        }
+
+        @keyframes shiny {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Desktop Navigation */
+        .nav-desktop {
+            display: flex;
+        }
+
+        .nav-desktop ul {
+            list-style: none;
+            display: flex;
+            gap: 2em;
+        }
+
+        .nav-desktop a {
+            color: #d2b48c;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-desktop a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #ffd700;
+            transition: all 0.3s ease;
+        }
+
+        .nav-desktop a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .cart-icon {
+            position: relative;
+            color: #d2b48c;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            margin-left: 2em;
+        }
+
+        .cart-icon:hover {
+            color: #ffd700;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ffd700;
+            color: #3b2a1e;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        /* Mobile Navigation */
+        .nav-mobile {
+            display: none;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            color: #d2b48c;
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 0.5em;
+        }
+
+        .nav-mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: linear-gradient(135deg, #3d4a2a, #4a2c1b);
+            transition: left 0.3s ease;
+            z-index: 99;
+        }
+
+        .nav-mobile-menu.active {
+            left: 0;
+        }
+
+        .nav-mobile-menu ul {
+            list-style: none;
+            padding: 2em;
+        }
+
+        .nav-mobile-menu li {
+            margin: 1.5em 0;
+        }
+
+        .nav-mobile-menu a {
+            color: #d2b48c;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+            display: block;
+            padding: 0.5em;
+            border-bottom: 1px solid rgba(210, 180, 140, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-mobile-menu a:hover {
+            background-color: rgba(210, 180, 140, 0.1);
+            border-radius: 5px;
+        }
+
+        /* Section Styles */
+        .section {
+            max-width: 1000px;
+            margin: 3em auto;
+            padding: 2em;
+            background-image: url('https://www.transparenttextures.com/patterns/old-paper.png');
+            background-color: #f4e3b2;
+            box-shadow: 
+                inset 0 0 30px rgba(139, 69, 19, 0.5),
+                0 0 15px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(50, 30, 10, 0.4);
+            border-radius: 15px;
+            animation: fadeInUp 0.8s ease;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #8b4513, #d2b48c, #8b4513);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4em 2em;
+        }
+
+        .hero h2 {
+            font-size: 2.4em;
+            margin: 0.5em 0;
+            color: #3b2a1e;
+            animation: slideInDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            max-width: 600px;
+            margin: 0 auto 2em;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #3b2a1e;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .section p {
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 1em 2em;
+            background: linear-gradient(135deg, #7a3c24, #8b4513);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(122, 60, 36, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1.1em;
+            border: none;
+            font-family: inherit;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+            transform: skewX(-20deg);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::after { left: 100%; }
+
+        .btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(122, 60, 36, 0.5);
+            background: linear-gradient(135deg, #8b4513, #7a3c24);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Music Player Styles */
+        .music-player {
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border-radius: 15px;
+            padding: 1.5em;
+            margin: 2em 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7a3c24, #8b4513);
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(122, 60, 36, 0.5);
+        }
+
+        .track-info {
+            flex: 1;
+            color: #d2b48c;
+            text-align: center;
+        }
+
+        .track-title {
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .progress-container {
+            background: #444;
+            height: 6px;
+            border-radius: 3px;
+            margin: 1em 0;
+            cursor: pointer;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #7a3c24, #8b4513);
+            border-radius: 3px;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Photo Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5em;
+            margin: 2em 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1em;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: #3b2a1e;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1em;
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            background-color: #efdfc4;
+            font-family: inherit;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #7a3c24;
+            box-shadow: 0 0 10px rgba(122, 60, 36, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Newsletter Form Styles */
+        .newsletter-form {
+            max-width: 600px;
+            margin: 1em auto;
+            text-align: center;
+        }
+
+        .newsletter-form form {
+            display: flex;
+            gap: 0.5em;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 1em;
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            background-color: #f4e3b2;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        .newsletter-form input[type="email"]:focus {
+            outline: none;
+            border-color: #7a3c24;
+            box-shadow: 0 0 10px rgba(122, 60, 36, 0.2);
+        }
+
+        /* Store Styles */
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
+            margin: 2em 0;
+        }
+
+        .store-item {
+            text-align: center;
+            padding: 2em 1.5em;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            border: 2px solid rgba(139, 69, 19, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .store-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: rgba(139, 69, 19, 0.4);
+        }
+
+        .product-image {
+            font-size: 3em;
+            color: #7a3c24;
+            margin-bottom: 1em;
+        }
+
+        .store-item h3 {
+            color: #3b2a1e;
+            margin-bottom: 0.5em;
+            font-family: 'Rye', cursive;
+        }
+
+        .store-item p {
+            color: #666;
+            margin-bottom: 1em;
+            font-size: 0.9em;
+        }
+
+        .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #7a3c24;
+            margin-bottom: 1em;
+        }
+
+        .store-btn {
+            width: 100%;
+            margin: 0;
+        }
+
+        /* Center specific buttons */
+        .youtube-btn, .send-message-btn {
+            display: block;
+            margin: 1em auto;
+            text-align: center;
+        }
+
+        /* Hide forms initially */
+        .contact-form, .newsletter-form {
+            display: none;
+        }
+
+        .contact-form.show, .newsletter-form.show {
+            display: block;
+        }
+
+        .form-toggle-btn {
+            display: block;
+            margin: 1em auto;
+        }
+
+        /* Shopping Cart Styles */
+        .cart-notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: linear-gradient(135deg, #7a3c24, #8b4513);
+            color: white;
+            padding: 1em 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .cart-notification.show {
+            transform: translateX(0);
+        }
+
+        /* Enhanced Button Styles */
+        .btn-container {
+            text-align: center;
+            margin: 1em 0;
+        }
+
+        /* Improved Form Styles */
+        .form-group {
+            margin-bottom: 1.5em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: #3b2a1e;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1em;
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            background-color: #efdfc4;
+            font-family: inherit;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #7a3c24;
+            box-shadow: 0 0 10px rgba(122, 60, 36, 0.2);
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 2em 0;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        /* Social Media Feed */
+        .social-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2em;
+            margin: 2em 0;
+        }
+
+        .social-post {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 1.5em;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .social-post-header {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7a3c24, #8b4513);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #3b2a1e;
+            color: #fff;
+            text-align: center;
+            padding: 3em 2em;
+            margin-top: 4em;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
+            margin-bottom: 2em;
+        }
+
+        .footer-section h3 {
+            color: #d2b48c;
+            margin-bottom: 1em;
+            font-family: 'Rye', cursive;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            margin: 2em 0;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7a3c24, #8b4513);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(122, 60, 36, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+
+            .nav-mobile {
+                display: block;
+            }
+
+            .header-container {
+                min-height: 60px;
+            }
+
+            .logo h1 {
+                font-size: 1.4em;
+            }
+
+            .hero h2 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .section {
+                margin: 2em 1em;
+                padding: 1.5em;
+            }
+
+            .section h2 {
+                font-size: 1.6em;
+            }
+
+            .section p {
+                font-size: 1.1em;
+            }
+
+            .newsletter-form form {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .newsletter-form input[type="email"] {
+                min-width: 100%;
+            }
+
+            .player-controls {
+                flex-direction: column;
+                gap: 1em;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1em;
+            }
+
+            .social-feed {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 1em;
+            }
+
+            .hero {
+                padding: 2em 1em;
+            }
+
+            .btn {
+                padding: 0.8em 1.5em;
+                font-size: 1em;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            body {
+                background-color: #000;
+                color: #fff;
+            }
+            
+            .section {
+                background-color: #111;
+                border: 2px solid #fff;
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">Southern Cross Rangers</div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Southern Cross Rangers</h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop" aria-label="Main navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#music">Music</a></li>
+                    <li><a href="gallery.html" target="_blank">Gallery</a></li>
+                    <li><a href="store.html" target="_blank">Store</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav class="nav-mobile" aria-label="Mobile navigation">
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-mobile-menu">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#music">Music</a></li>
+                        <li><a href="gallery.html" target="_blank">Gallery</a></li>
+                        <li><a href="store.html" target="_blank">Store</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section hero">
+            <h2>Welcome to Southern Cross Rangers</h2>
+            <p>Honest songs and a bit of encouragement for anyone chasing that good old country music dream!</p>
+            <button class="btn form-toggle-btn" data-target="newsletter-form-1">Join the Monthly Journal!</button>
+            <div class="newsletter-form" id="newsletter-form-1">
+                <form action="https://app.convertkit.com/forms/8602830/subscriptions" method="post" target="_blank" novalidate>
+                    <input type="email" name="email_address" placeholder="Enter your email" required aria-label="Email address">
+                    <button type="submit" class="btn">Join the Monthly Journal!</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="music" class="section">
+            <h2>Hear It First</h2>
+            <p>No endless scrolling—check out my newest songs and videos right here.</p>
+            
+            <!-- Music Player -->
+            <div class="music-player">
+                <div class="player-controls">
+                    <button class="play-btn" aria-label="Play/Pause music">
+                        <i class="fas fa-play" id="playIcon"></i>
+                    </button>
+                    <div class="track-info">
+                        <div class="track-title" id="trackTitle">Southern Roads</div>
+                        <div class="track-artist">Southern Cross Rangers</div>
+                    </div>
+                </div>
+                <div class="progress-container" aria-label="Song progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div style="text-align:center; margin-top:1em; color:#d2b48c;">
+                    <span id="playlistIndicator">Track 1 of 3</span>
+                </div>
+                <div style="display:flex; justify-content:center; gap:1em; margin-top:0.5em;">
+                    <button class="btn" id="prevBtn" style="padding:0.5em 1em;">Prev</button>
+                    <button class="btn" id="nextBtn" style="padding:0.5em 1em;">Next</button>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/n9aZlzbhe4M" 
+                    title="Southern Cross Rangers Music Video"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p><em>Story behind the song: A heartfelt tune inspired by small-town life.</em></p>
+            <a href="https://www.youtube.com/channel/UCHHhWk-py_skZryQsmT2k3g" class="btn youtube-btn">Listen on YouTube!</a>
+        </section>
+
+        <section id="gallery" class="section" style="display: none;">
+            <!-- Gallery moved to separate page -->
+        </section>
+
+        <section id="musicians-friends" class="section">
+            <h2>For Our Musician Friends</h2>
+            <p>Quick, down-to-earth tips to play the country songs you love, no fancy talk.</p>
+            <button class="btn form-toggle-btn" data-target="newsletter-form-2">Get Tips in the Monthly Journal!</button>
+            <div class="newsletter-form" id="newsletter-form-2">
+                <form action="https://app.convertkit.com/forms/8602830/subscriptions" method="post" target="_blank" novalidate>
+                    <input type="email" name="email_address" placeholder="Enter your email" required aria-label="Email address">
+                    <button type="submit" class="btn">Get Tips in the Monthly Journal!</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- What's Happening removed per request -->
+
+        <section id="store" class="section">
+            <h2>Store</h2>
+            <p>Made specially for you, straight from the heart!</p>
+            <div style="text-align: center; margin: 2em 0;">
+                <a href="store.html" class="btn" style="font-size: 1.3em; padding: 1.2em 2.5em;">
+                    <i class="fas fa-shopping-cart"></i>
+                    Visit Our Full Store
+                </a>
+            </div>
+            <div class="store-preview" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5em; margin: 2em 0;">
+                <div style="text-align: center; padding: 1.5em; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                    <i class="fas fa-compact-disc" style="font-size: 2em; color: #7a3c24; margin-bottom: 0.5em;"></i>
+                    <h4>Albums</h4>
+                    <p>Digital Downloads</p>
+                </div>
+                <div style="text-align: center; padding: 1.5em; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                    <i class="fas fa-tshirt" style="font-size: 2em; color: #7a3c24; margin-bottom: 0.5em;"></i>
+                    <h4>Merchandise</h4>
+                    <p>T-Shirts & More</p>
+                </div>
+                <div style="text-align: center; padding: 1.5em; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                    <i class="fas fa-gift" style="font-size: 2em; color: #7a3c24; margin-bottom: 0.5em;"></i>
+                    <h4>Accessories</h4>
+                    <p>Hats, Mugs & Picks</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About</h2>
+            <p>Howdy! My name is George McLarry! I was raised on a Huon Valley farm in Tasmania, Australia. Self-taught on guitar since age 10, my music draws from the simplicity and Christian roots of old-style country, inspired by legends like Hank Sr., Paul Overstreet, and Slim Dusty. 
+In 2025, I went all the way up to Tamworth to busk, but finding a stage, I ended up winning a guitar for being voted as the best walk-up artist! My songs carry the honest, small town-spirit for all y'all who still love and remember old style country music - real country!</p>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <p>Have a question, want to book a show, or just want to say howdy? Drop us a line!</p>
+            <button class="btn form-toggle-btn" data-target="contact-form">Get In Touch</button>
+            <div class="contact-form" id="contact-form">
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required aria-describedby="nameError">
+                        <div id="nameError" class="error-message" style="color: #d32f2f; font-size: 0.9em; margin-top: 0.5em; display: none;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required aria-describedby="emailError">
+                        <div id="emailError" class="error-message" style="color: #d32f2f; font-size: 0.9em; margin-top: 0.5em; display: none;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required aria-describedby="messageError"></textarea>
+                        <div id="messageError" class="error-message" style="color: #d32f2f; font-size: 0.9em; margin-top: 0.5em; display: none;"></div>
+                    </div>
+                    <button type="submit" class="btn send-message-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Southern Cross Rangers</h3>
+                <p>Honest country music from the heart of Tasmania</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#music" style="color: #d2b48c;">Music</a></p>
+                <p><a href="#gallery" style="color: #d2b48c;">Gallery</a></p>
+                <p><a href="#contact" style="color: #d2b48c;">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/channel/UCHHhWk-py_skZryQsmT2k3g" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/southern_cross_rangers/" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61570255802911" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="newsletter-form">
+            <h3 style="color: #d2b48c; margin-bottom: 1em;">Stay Connected</h3>
+            <form action="https://app.convertkit.com/forms/8602830/subscriptions" method="post" target="_blank" novalidate>
+                <input type="email" name="email_address" placeholder="Enter your email" required aria-label="Email address">
+                <button type="submit" class="btn">Join the Monthly Journal!</button>
+            </form>
+        </div>
+
+        <p>&copy; 2025 Southern Cross Rangers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Page Loading Animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loader = document.getElementById('loader');
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.nav-mobile-menu');
+        const mobileLinks = document.querySelectorAll('.nav-mobile-menu a');
+
+        hamburger.addEventListener('click', function() {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('active');
+            
+            // Toggle hamburger icon
+            const icon = hamburger.querySelector('i');
+            icon.className = mobileMenu.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+        });
+
+        // Close mobile menu when clicking on links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                const icon = hamburger.querySelector('i');
+                icon.className = 'fas fa-bars';
+            });
+        });
+
+        // Music Player Functionality
+        let isPlaying = false;
+        let currentTime = 0;
+        let duration = 0;
+        let progressInterval;
+        let currentTrackIndex = 0;
+        const playlist = [
+            { title: 'The One You Need', src: 'media/the-one-you-need.mp3', duration: 210 },
+            { title: 'Southern Roads', src: 'media/southern-roads.mp3', duration: 185 },
+            { title: 'Country Sunrise', src: 'media/country-sunrise.mp3', duration: 200 }
+        ];
+        const audio = new Audio();
+
+        const playBtn = document.querySelector('.play-btn');
+        const playIcon = document.getElementById('playIcon');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.querySelector('.progress-container');
+        const trackTitleEl = document.getElementById('trackTitle');
+        const playlistIndicator = document.getElementById('playlistIndicator');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        playBtn.addEventListener('click', function() {
+            if (!isPlaying) {
+                startPlaying();
+            } else {
+                stopPlaying();
+            }
+        });
+
+        progressContainer.addEventListener('click', function(e) {
+            const clickPosition = e.offsetX / progressContainer.offsetWidth;
+            currentTime = clickPosition * duration;
+            updateProgress();
+        });
+
+        function loadTrack(index) {
+            currentTrackIndex = (index + playlist.length) % playlist.length;
+            const track = playlist[currentTrackIndex];
+            audio.src = track.src;
+            duration = track.duration;
+            currentTime = 0;
+            updateProgress();
+            trackTitleEl.textContent = track.title;
+            playlistIndicator.textContent = `Track ${currentTrackIndex + 1} of ${playlist.length}`;
+        }
+
+        function startPlaying() {
+            if (!audio.src) loadTrack(0);
+            isPlaying = true;
+            playIcon.className = 'fas fa-pause';
+            audio.currentTime = currentTime;
+            audio.play().catch(()=>{});
+            progressInterval = setInterval(updateProgress, 1000);
+        }
+
+        function stopPlaying() {
+            isPlaying = false;
+            playIcon.className = 'fas fa-play';
+            clearInterval(progressInterval);
+            audio.pause();
+        }
+
+        function updateProgress() {
+            if (duration === 0) return;
+            if (isPlaying) {
+                currentTime = audio.currentTime;
+                if (currentTime >= duration - 0.5) {
+                    nextTrack();
+                    return;
+                }
+            }
+            const progressPercent = Math.max(0, Math.min(100, (currentTime / duration) * 100));
+            progressBar.style.width = progressPercent + '%';
+        }
+
+        function nextTrack() { loadTrack(currentTrackIndex + 1); startPlaying(); }
+        function prevTrack() { loadTrack(currentTrackIndex - 1); startPlaying(); }
+
+        prevBtn.addEventListener('click', prevTrack);
+        nextBtn.addEventListener('click', nextTrack);
+
+        // Initialize first track metadata
+        loadTrack(0);
+
+        // Contact Form Validation
+        const contactForm = document.getElementById('contactForm');
+        const nameField = document.getElementById('name');
+        const emailField = document.getElementById('email');
+        const messageField = document.getElementById('message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.style.display = 'none';
+            });
+            
+            // Validate name
+            if (nameField.value.trim() === '') {
+                showError('nameError', 'Name is required');
+                isValid = false;
+            }
+            
+            // Validate email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailField.value)) {
+                showError('emailError', 'Please enter a valid email address');
+                isValid = false;
+            }
+            
+            // Validate message
+            if (messageField.value.trim() === '') {
+                showError('messageError', 'Message is required');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('Thanks for your message! We\'ll get back to you soon.');
+                    contactForm.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            }
+        });
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+
+        // Newsletter Form Enhancement
+        document.querySelectorAll('.newsletter-form form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const emailInput = form.querySelector('input[type="email"]');
+                const submitButton = form.querySelector('button[type="submit"]');
+                
+                if (emailInput.value.trim() === '') {
+                    e.preventDefault();
+                    alert('Please enter a valid email address');
+                    return false;
+                }
+                
+                // Show loading state
+                const originalText = submitButton.textContent;
+                submitButton.textContent = 'Joining...';
+                submitButton.disabled = true;
+                
+                // Allow the form to submit to ConvertKit
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                }, 2000);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Gallery lightbox functionality
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const overlay = this.querySelector('.gallery-overlay');
+                const title = overlay.querySelector('h3').textContent;
+                const description = overlay.querySelector('p').textContent;
+                
+                // Create lightbox
+                const lightbox = document.createElement('div');
+                lightbox.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.9);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10000;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                `;
+                
+                const lightboxContent = document.createElement('div');
+                lightboxContent.style.cssText = `
+                    max-width: 90%;
+                    max-height: 90%;
+                    text-align: center;
+                    color: white;
+                `;
+                
+                const lightboxImg = document.createElement('img');
+                lightboxImg.src = img.src;
+                lightboxImg.style.cssText = `
+                    max-width: 100%;
+                    max-height: 80vh;
+                    object-fit: contain;
+                    border-radius: 10px;
+                    margin-bottom: 1em;
+                `;
+                
+                const lightboxTitle = document.createElement('h3');
+                lightboxTitle.textContent = title;
+                lightboxTitle.style.cssText = `
+                    font-size: 1.5em;
+                    margin-bottom: 0.5em;
+                    color: #d2b48c;
+                `;
+                
+                const lightboxDesc = document.createElement('p');
+                lightboxDesc.textContent = description;
+                lightboxDesc.style.fontSize = '1.1em';
+                
+                const closeBtn = document.createElement('button');
+                closeBtn.innerHTML = '×';
+                closeBtn.style.cssText = `
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    background: rgba(0,0,0,0.5);
+                    border: none;
+                    color: white;
+                    font-size: 2em;
+                    cursor: pointer;
+                    padding: 10px 15px;
+                    border-radius: 50%;
+                    transition: background 0.3s ease;
+                `;
+                
+                lightboxContent.appendChild(lightboxImg);
+                lightboxContent.appendChild(lightboxTitle);
+                lightboxContent.appendChild(lightboxDesc);
+                lightbox.appendChild(lightboxContent);
+                lightbox.appendChild(closeBtn);
+                document.body.appendChild(lightbox);
+                
+                // Fade in
+                setTimeout(() => {
+                    lightbox.style.opacity = '1';
+                }, 10);
+                
+                // Close functionality
+                function closeLightbox() {
+                    lightbox.style.opacity = '0';
+                    setTimeout(() => {
+                        if (lightbox.parentNode) {
+                            document.body.removeChild(lightbox);
+                        }
+                    }, 300);
+                }
+                
+                closeBtn.addEventListener('click', closeLightbox);
+                lightbox.addEventListener('click', function(e) {
+                    if (e.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+                
+                // Keyboard support
+                document.addEventListener('keydown', function escapeHandler(e) {
+                    if (e.key === 'Escape') {
+                        closeLightbox();
+                        document.removeEventListener('keydown', escapeHandler);
+                    }
+                });
+            });
+        });
+
+        // Scroll-based animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            // Escape key support for closing modals
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.nav-mobile-menu.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    const icon = hamburger.querySelector('i');
+                    icon.className = 'fas fa-bars';
+                }
+            }
+        });
+
+        // Performance optimization: Throttled scroll handler
+        let ticking = false;
+        function handleScroll() {
+            // Parallax effect for hero section
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < hero.offsetHeight) {
+                const speed = scrolled * 0.5;
+                hero.style.transform = `translateY(${speed}px)`;
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(handleScroll);
+                ticking = true;
+            }
+        });
+
+        // Shopping Cart Functionality
+        let cart = [];
+        
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            showCartNotification(productName);
+        }
+
+        function showCartNotification(productName) {
+            // Remove existing notification if any
+            const existingNotification = document.querySelector('.cart-notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            // Create new notification
+            const notification = document.createElement('div');
+            notification.className = 'cart-notification';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${productName} added to cart!</span>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Show notification
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            // Hide notification after 3 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Add event listeners to store buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.store-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const storeItem = this.closest('.store-item');
+                    const productName = storeItem.querySelector('h3').textContent;
+                    const price = storeItem.querySelector('.price').textContent;
+                    
+                    addToCart(productName, price);
+                });
+            });
+        });
+
+        // Form toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.form-toggle-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const form = document.getElementById(targetId);
+                    
+                    if (form.classList.contains('show')) {
+                        form.classList.remove('show');
+                        this.textContent = this.textContent.replace('Hide', '').trim();
+                    } else {
+                        form.classList.add('show');
+                        this.textContent = 'Hide ' + this.textContent;
+                    }
+                });
+            });
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show sections with initial opacity 0 for scroll animation
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+
+            // Track analytics events (placeholder)
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    console.log('Button clicked:', this.textContent.trim());
+                });
+            });
+        });
+    </script>
+</body>
+</html>
