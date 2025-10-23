@@ -30,9 +30,9 @@ export function Header() {
             <h1 
               className="header-1 text-responsive-title"
               style={{
-                fontFamily: "'Impact', 'Arial Black', 'Helvetica', 'sans-serif'",
-                fontWeight: '900',
-                fontSize: 'clamp(2rem, 5vw, 4rem)',
+                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', 'Western', 'Cowboy', cursive",
+                fontWeight: '400',
+                fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                 color: '#FFD700',
                 textAlign: 'center',
                 textShadow: '4px 4px 8px rgba(0,0,0,0.5), 2px 2px 0px #A62400',
@@ -43,8 +43,7 @@ export function Header() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 animation: 'shine 3s ease-in-out infinite',
-                letterSpacing: '2px',
-                textTransform: 'uppercase'
+                letterSpacing: '1px'
               }}
             >
               Southern Cross Rangers
@@ -77,7 +76,7 @@ export function Header() {
               textShadow: 'none',
               border: '2px solid #b8860b',
               boxShadow: '0 4px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5)',
-              fontFamily: "'Impact', 'Arial Black', 'Helvetica', 'sans-serif'"
+              fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive"
             }}
           >
             Join Our Family!
@@ -128,7 +127,7 @@ export function Header() {
                 textShadow: 'none',
                 border: '2px solid #b8860b',
                 boxShadow: '0 4px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5)',
-                fontFamily: "'Impact', 'Arial Black', 'Helvetica', 'sans-serif'"
+                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive"
               }}
             >
               Join Our Family!
