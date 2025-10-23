@@ -24,7 +24,9 @@ export async function POST(request: NextRequest) {
           currency: 'aud',
           product_data: {
             name: item.name,
-            description: 'Test product for payment verification',
+            description: item.options ? 
+              `${item.name} - ${Object.entries(item.options).map(([key, value]) => `${key}: ${value}`).join(', ')}` :
+              item.name,
           },
           unit_amount: Math.round(item.price * 100), // Convert to cents
         },
@@ -33,8 +35,12 @@ export async function POST(request: NextRequest) {
       mode: 'payment',
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/mercantile?success=true`,
       cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/mercantile?canceled=true`,
+      shipping_address_collection: {
+        allowed_countries: ['AU', 'US', 'CA', 'GB', 'NZ'],
+      },
+      billing_address_collection: 'required',
       metadata: {
-        customer_email: 'customer@example.com', // You can get this from the form
+        items: JSON.stringify(items),
       },
     })
 

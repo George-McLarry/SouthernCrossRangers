@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { AdminAuth } from '@/components/AdminAuth'
-import { VisualAdminPanel } from '@/components/VisualAdminPanel'
+import { FunctionalAdminPanel } from '@/components/FunctionalAdminPanel'
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -19,5 +19,5 @@ export default function AdminPage() {
     return <AdminAuth onAuthenticated={handleAuthenticated} />
   }
 
-  return <VisualAdminPanel onLogout={handleLogout} />
+  return <FunctionalAdminPanel onLogout={handleLogout} />
 }
