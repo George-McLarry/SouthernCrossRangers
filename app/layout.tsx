@@ -14,6 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="https://fonts.gstatic.com/s/rye/v13/r05XGLJT86YzEZv.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+      </head>
       <body>
         <CartProvider>
           {children}
