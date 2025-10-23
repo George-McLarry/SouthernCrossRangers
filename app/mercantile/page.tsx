@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
@@ -7,12 +10,21 @@ import { CartSidebar } from '@/components/CartSidebar'
 import { EnhancedProductCard } from '@/components/EnhancedProductCard'
 import { ProductDetailModal } from '@/components/ProductDetailModal'
 
-'use client'
-
-import { useState } from 'react'
+interface Product {
+  id: string
+  name: string
+  description: string
+  price: number
+  stock: number
+  image: string
+  formats?: string[]
+  colors?: string[]
+  sizes?: string[]
+  stripe_price_id?: string
+}
 
 export default function MercantilePage() {
-  const [selectedProduct, setSelectedProduct] = useState(null)
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
   const products = [
     {
