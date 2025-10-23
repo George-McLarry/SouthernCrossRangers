@@ -30,9 +30,9 @@ export function Header() {
             <h1 
               className="header-1 text-responsive-title"
               style={{
-                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', 'Western', 'Cowboy', cursive",
-                fontWeight: '400',
-                fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+                fontFamily: "'Impact', 'Arial Black', 'Helvetica', 'sans-serif'",
+                fontWeight: '900',
+                fontSize: 'clamp(2rem, 5vw, 4rem)',
                 color: '#FFD700',
                 textAlign: 'center',
                 textShadow: '4px 4px 8px rgba(0,0,0,0.5), 2px 2px 0px #A62400',
@@ -43,7 +43,8 @@ export function Header() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 animation: 'shine 3s ease-in-out infinite',
-                letterSpacing: '1px'
+                letterSpacing: '2px',
+                textTransform: 'uppercase'
               }}
             >
               Southern Cross Rangers

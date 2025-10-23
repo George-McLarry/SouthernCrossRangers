@@ -57,7 +57,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="parchment-section max-w-md w-full relative" style={{ margin: '0 auto' }}>
+      <div className="bg-white rounded-lg max-w-md w-full p-6 relative">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -87,7 +87,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
               placeholder="Your First Name"
               value={formData.firstName}
               onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-              className="form-input"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
               required
             />
           </div>
@@ -97,7 +97,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
               placeholder="Your Email Address"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
-              className="form-input"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
               required
             />
           </div>
