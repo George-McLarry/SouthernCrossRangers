@@ -30,7 +30,7 @@ export function Header() {
             <h1 
               className="header-1 text-responsive-title"
               style={{
-                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive",
+                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', 'Western', 'Cowboy', cursive",
                 fontWeight: 'bold',
                 color: '#FFD700',
                 textAlign: 'center',
