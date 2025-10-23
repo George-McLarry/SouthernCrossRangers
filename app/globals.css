@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rye:wght@400&family=Smokum:wght@400&family=Vast+Shadow:wght@400&family=Georgia:wght@400;600&display=swap');
+
+/* Preload critical fonts */
+@font-face {
+  font-family: 'Rye';
+  src: url('https://fonts.gstatic.com/s/rye/v13/r05XGLJT86YzEZv.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
