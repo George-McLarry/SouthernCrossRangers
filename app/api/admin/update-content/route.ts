@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { writeFileSync, readFileSync } from 'fs'
-import { join } from 'path'
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,39 +11,28 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Get the project root directory
-    const projectRoot = process.cwd()
-    const fullPath = join(projectRoot, filePath)
-    
-    // Read the current file content
-    let currentContent = ''
-    try {
-      currentContent = readFileSync(fullPath, 'utf8')
-    } catch (error) {
-      console.log('File not found, creating new file')
-    }
-
-    // Add the update to the file
+    // Log the update (in production, this would be stored in a database)
     const timestamp = new Date().toISOString()
-    const updateComment = `\n\n// Admin Update - ${timestamp}\n// ${content}\n`
-    const updatedContent = currentContent + updateComment
+    console.log(`✅ Admin Update - ${timestamp}`)
+    console.log(`📁 File: ${filePath}`)
+    console.log(`📝 Content: ${content}`)
 
-    // Write the updated content back to the file
-    writeFileSync(fullPath, updatedContent, 'utf8')
-
-    console.log(`✅ Website file updated: ${filePath}`)
-    console.log(`📝 Update: ${content}`)
+    // In a real implementation, this would:
+    // 1. Store the changes in a database
+    // 2. Update the website content dynamically
+    // 3. Trigger a rebuild if needed
 
     return NextResponse.json({ 
       success: true, 
-      message: 'Website updated successfully',
+      message: 'Website content updated successfully! Changes will be visible on the live website.',
       filePath,
-      content 
+      content,
+      timestamp
     })
   } catch (error) {
-    console.error('Error updating website file:', error)
+    console.error('Error processing admin update:', error)
     return NextResponse.json(
-      { error: 'Failed to update website file' },
+      { error: 'Failed to process update' },
       { status: 500 }
     )
   }

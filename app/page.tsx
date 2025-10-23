@@ -1,8 +1,21 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
+import { db } from '@/lib/database'
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Fetch content from database with fallback
+  let contentMap: Record<string, string> = {}
+  
+  try {
+    const contentSections = await db.getContentSections()
+    contentMap = contentSections.reduce((acc, section) => {
+      acc[section.section_name] = section.content
+      return acc
+    }, {} as Record<string, string>)
+  } catch (error) {
+    console.log('Database not available, using default content')
+  }
   return (
     <div className="min-h-screen">
       <Header />
@@ -11,14 +24,13 @@ export default function HomePage() {
         {/* Hero Section */}
         <ParchmentSection>
           <h1 className="header-1 text-4xl md:text-6xl mb-6">
-            Welcome to Southern Cross Rangers
+            {contentMap.hero_title || 'Welcome to Southern Cross Rangers'}
           </h1>
           <h2 className="header-2 text-2xl md:text-3xl mb-6">
-            Authentic Country Music from the Heart of Tasmania
+            {contentMap.hero_tagline || 'Authentic Country Music from the Heart of Tasmania'}
           </h2>
           <p className="body-text text-lg md:text-xl mb-8">
-            Experience the raw beauty of Tasmanian landscapes through our music. 
-            Every song tells a story of the land, the people, and the spirit that makes Tasmania special.
+            {contentMap.hero_text || 'Experience the raw beauty of Tasmanian landscapes through our music. Every song tells a story of the land, the people, and the spirit that makes Tasmania special.'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/music" className="gold-button">
@@ -73,13 +85,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <p className="body-text text-lg mb-6">
-                We are a country music band from Tasmania, Australia, dedicated to preserving and sharing 
-                the authentic sounds of our homeland. Our music is inspired by the rugged beauty of Tasmania's 
-                landscapes, the resilience of its people, and the rich heritage of Australian country music.
-              </p>
-              <p className="body-text text-lg mb-6">
-                From the rolling hills of the Midlands to the wild coastlines of the West Coast, 
-                our songs capture the essence of what it means to be Tasmanian.
+                {contentMap.about_text || 'We are a country music band from Tasmania, Australia, dedicated to preserving and sharing the authentic sounds of our homeland. Our music is inspired by the rugged beauty of Tasmania\'s landscapes, the resilience of its people, and the rich heritage of Australian country music.'}
               </p>
             </div>
             <div className="text-center">

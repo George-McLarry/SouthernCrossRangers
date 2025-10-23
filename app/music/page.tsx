@@ -2,8 +2,33 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
 import { MusicPlayer } from '@/components/MusicPlayer'
+import { db } from '@/lib/database'
 
-export default function MusicPage() {
+export default async function MusicPage() {
+  // Fetch music tracks from database with fallback
+  let musicTracks: any[] = []
+  
+  try {
+    musicTracks = await db.getMusicTracks()
+  } catch (error) {
+    console.log('Database not available, using default tracks')
+    musicTracks = [
+      {
+        id: '1',
+        title: 'The One You Need',
+        artist: 'Southern Cross Rangers',
+        url: '/audio/The One You Need.wav',
+        description: 'Our signature track that captures the essence of Tasmanian country music.'
+      },
+      {
+        id: '2',
+        title: 'Being Near Is Better',
+        artist: 'Southern Cross Rangers',
+        url: '/audio/Being Near Is Better.wav',
+        description: 'A heartfelt ballad about the importance of family and home.'
+      }
+    ]
+  }
   return (
     <div className="min-h-screen">
       <Header />
@@ -40,54 +65,39 @@ export default function MusicPage() {
             Track Listing
           </h2>
           <div className="space-y-4">
-            <div className="parchment-section">
-              <div className="flex items-center space-x-4">
-                <button className="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center text-text-dark hover:scale-105 transition-transform">
-                  ▶️
-                </button>
-                <div className="flex-1">
-                  <h3 className="header-2 text-lg">The One You Need</h3>
-                  <p className="body-text text-sm">Southern Cross Rangers</p>
+            {musicTracks.length > 0 ? (
+              musicTracks.map((track) => (
+                <div key={track.id} className="parchment-section">
+                  <div className="flex items-center space-x-4">
+                    <button className="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center text-text-dark hover:scale-105 transition-transform">
+                      ▶️
+                    </button>
+                    <div className="flex-1">
+                      <h3 className="header-2 text-lg">{track.title}</h3>
+                      <p className="body-text text-sm">{track.artist}</p>
+                      {track.description && (
+                        <p className="body-text text-xs text-gray-600 mt-1">{track.description}</p>
+                      )}
+                    </div>
+                    <div className="flex flex-col items-end">
+                      <span className="body-text text-sm">Track</span>
+                      <a 
+                        href={track.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:underline text-xs"
+                      >
+                        Play
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <span className="body-text text-sm">4:00</span>
+              ))
+            ) : (
+              <div className="text-center py-8">
+                <p className="body-text">No tracks available. Add some music in the admin panel!</p>
               </div>
-            </div>
-            <div className="parchment-section">
-              <div className="flex items-center space-x-4">
-                <button className="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center text-text-dark hover:scale-105 transition-transform">
-                  ▶️
-                </button>
-                <div className="flex-1">
-                  <h3 className="header-2 text-lg">Being Near Is Better</h3>
-                  <p className="body-text text-sm">Southern Cross Rangers</p>
-                </div>
-                <span className="body-text text-sm">3:15</span>
-              </div>
-            </div>
-            <div className="parchment-section">
-              <div className="flex items-center space-x-4">
-                <button className="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center text-text-dark hover:scale-105 transition-transform">
-                  ▶️
-                </button>
-                <div className="flex-1">
-                  <h3 className="header-2 text-lg">We Will Meet Again</h3>
-                  <p className="body-text text-sm">Southern Cross Rangers</p>
-                </div>
-                <span className="body-text text-sm">3:30</span>
-              </div>
-            </div>
-            <div className="parchment-section">
-              <div className="flex items-center space-x-4">
-                <button className="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center text-text-dark hover:scale-105 transition-transform">
-                  ▶️
-                </button>
-                <div className="flex-1">
-                  <h3 className="header-2 text-lg">Don't Eat The Cheese</h3>
-                  <p className="body-text text-sm">Southern Cross Rangers</p>
-                </div>
-                <span className="body-text text-sm">3:45</span>
-              </div>
-            </div>
+            )}
           </div>
         </ParchmentSection>
       </main>
