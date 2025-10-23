@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rye:wght@400&family=Smokum&family=Vast+Shadow&family=Georgia:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rye:wght@400&family=Smokum:wght@400&family=Vast+Shadow:wght@400&family=Georgia:wght@400;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,7 +51,7 @@
 @layer components {
   /* Header 1 and Titles - GOLD with brown shadow - FORCE OVERRIDE */
   h1.header-1, .header-1 {
-    font-family: 'Rye', 'Smokum', 'Vast Shadow', cursive !important;
+    font-family: 'Rye', 'Smokum', 'Vast Shadow', 'Western', 'Cowboy', cursive !important;
     font-weight: bold !important;
     color: #FFD700 !important;
     text-align: center !important;
