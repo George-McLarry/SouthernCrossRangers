@@ -1,15 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
+  // Remove static export for admin functionality
   images: {
     unoptimized: true
-  },
-  distDir: 'out',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
-  basePath: '',
-  generateBuildId: async () => {
-    return 'build-' + Date.now()
   }
 }
 

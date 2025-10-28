@@ -15,3 +15,5 @@ export const createServerClient = () => {
 export const createAdminClient = () => {
   return createClient(supabaseUrl, process.env.SUPABASE_SERVICE_ROLE_KEY!)
 }
+
+

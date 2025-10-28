@@ -9,30 +9,26 @@ export default function EventsPage() {
       
       <main>
         <ParchmentSection>
-          <h1 className="header-1 text-4xl md:text-6xl mb-6">
-            Events
+          <h1 className="header-1 text-4xl md:text-6xl mb-6 text-center">
+            Events!
           </h1>
-          <h2 className="header-2 text-2xl md:text-3xl mb-6">
-            Upcoming Shows & Performances
+          <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
+            Join us for live performances across Tasmania and beyond, we'd love to see you there!
           </h2>
-          <p className="body-text text-lg md:text-xl mb-8">
-            Join us for live performances across Tasmania and beyond. 
-            Experience the authentic sound of Southern Cross Rangers in person.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="gold-button">
-              📅 View Calendar
-            </button>
-            <button className="gold-button">
-              🎫 Get Tickets
-            </button>
-          </div>
         </ParchmentSection>
 
         <ParchmentSection>
-          <h2 className="header-2 text-3xl md:text-4xl mb-8">
+          <h2 className="header-2 text-3xl md:text-4xl mb-8 text-center">
             Upcoming Events
           </h2>
+          <div className="text-center mb-8">
+            <p className="body-text text-lg mb-4">
+              <em>Event booking system coming soon! These are placeholder events for demonstration purposes.</em>
+            </p>
+            <p className="body-text text-sm text-gray-600">
+              Please do not attempt to book these events as they are not real bookings.
+            </p>
+          </div>
           <div className="space-y-6">
             <div className="parchment-section">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -58,7 +54,7 @@ export default function EventsPage() {
                       <p className="header-2 text-xl">$25 AUD</p>
                       <p className="body-text text-sm">Per person</p>
                     </div>
-                    <button className="gold-button">Get Tickets</button>
+                    <button className="gold-button" disabled>Get Tickets (Coming Soon)</button>
                   </div>
                 </div>
               </div>
@@ -88,7 +84,7 @@ export default function EventsPage() {
                       <p className="header-2 text-xl">$40 AUD</p>
                       <p className="body-text text-sm">Per person</p>
                     </div>
-                    <button className="gold-button">Get Tickets</button>
+                    <button className="gold-button" disabled>Get Tickets (Coming Soon)</button>
                   </div>
                 </div>
               </div>
@@ -118,7 +114,7 @@ export default function EventsPage() {
                       <p className="header-2 text-xl">$35 AUD</p>
                       <p className="body-text text-sm">Per person</p>
                     </div>
-                    <button className="gold-button">Get Tickets</button>
+                    <button className="gold-button" disabled>Get Tickets (Coming Soon)</button>
                   </div>
                 </div>
               </div>
