@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rye:wght@400&family=Smokum:wght@400&family=Vast+Shadow:wght@400&family=Georgia:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rye:wght@400&family=Smokum:wght@400&family=Vast+Shadow:wght@400&family=Cinzel:wght@400;500;600&family=Uncial+Antiqua&family=Georgia:wght@400;600&display=swap');
 
 /* Preload critical fonts */
 @font-face {
@@ -59,43 +59,27 @@
 }
 
 @layer components {
-  /* Header 1 and Titles - GOLD with brown shadow - FORCE OVERRIDE */
+  /* Header 1 and Titles - WILD WEST FONT with brown color */
   h1.header-1, .header-1 {
-    font-family: 'Rye', 'Smokum', 'Vast Shadow', 'Western', 'Cowboy', cursive !important;
+    font-family: 'Rye', 'Smokum', 'Vast Shadow', 'Cinzel', 'Uncial Antiqua', 'Western', 'Cowboy', cursive !important;
     font-weight: 400 !important;
-    color: #FFD700 !important;
+    color: #5d4037 !important;
     text-align: center !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
     text-shadow: 
-      2px 2px 0px #A62400,
-      4px 4px 8px rgba(0,0,0,0.5) !important;
+      2px 2px 0px #8D6E63,
+      4px 4px 8px rgba(0,0,0,0.3) !important;
     position: relative !important;
-    background: linear-gradient(
-      45deg,
-      #FFD700 0%,
-      #FFE55C 25%,
-      #FFD700 50%,
-      #FFE55C 75%,
-      #FFD700 100%
-    ) !important;
-    background-size: 200% 200% !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    animation: shine 3s ease-in-out infinite !important;
-  }
-  
-  @keyframes shine {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
   }
   
   .header-2 {
     font-family: 'Georgia', 'Times New Roman', serif;
-    font-weight: 600;
+    font-weight: 400;
     color: #5d4037;
     text-align: center;
+    font-size: 0.9em;
+    opacity: 0.8;
   }
   
   .body-text {

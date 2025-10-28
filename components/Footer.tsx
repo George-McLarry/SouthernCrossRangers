@@ -6,15 +6,15 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
           <p className="body-text text-lg italic leading-relaxed" style={{ 
-            color: '#28D1CC', 
-            textShadow: '2px 2px 0px #FFD700, 4px 4px 8px rgba(0,0,0,0.5)',
+            color: '#5d4037', 
+            textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
             fontWeight: 'bold'
           }}>
             "O come, let us sing unto the Lord, let us make a joyful noise to the Rock of our salvation!"
           </p>
           <p className="body-text text-base mt-2" style={{ 
-            color: '#28D1CC', 
-            textShadow: '1px 1px 0px #FFD700, 2px 2px 4px rgba(0,0,0,0.5)',
+            color: '#5d4037', 
+            textShadow: '1px 1px 2px rgba(0,0,0,0.5)',
             fontWeight: 'bold'
           }}>
             ~Psalms 95:1~

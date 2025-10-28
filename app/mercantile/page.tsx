@@ -9,6 +9,7 @@ import { ProductGrid } from '@/components/ProductGrid'
 import { CartSidebar } from '@/components/CartSidebar'
 import { EnhancedProductCard } from '@/components/EnhancedProductCard'
 import { ProductDetailModal } from '@/components/ProductDetailModal'
+import Image from 'next/image'
 
 interface Product {
   id: string
@@ -111,16 +112,18 @@ export default function MercantilePage() {
           </div>
         </ParchmentSection>
 
-        <ParchmentSection id="promotion">
+        <ParchmentSection>
           <h1 className="header-1 text-3xl md:text-4xl mb-6 text-center">
             Promotion Section
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="text-center">
-              <img 
+              <Image 
                 src="https://instasize.com/p/8118536984dd76c4837dbe798fe7d8526f318239167f522a034ae5462ba1ce6f" 
                 alt="The One You Need Album Cover"
-                className="w-64 h-64 object-cover rounded-lg mx-auto mb-6"
+                width={256}
+                height={256}
+                className="object-cover rounded-lg mx-auto mb-6"
               />
             </div>
             <div className="text-center">

@@ -1,21 +1,13 @@
+'use client'
+
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
-import { db } from '@/lib/database'
+import Image from 'next/image'
 
-export default async function HomePage() {
-  // Fetch content from database with fallback
-  let contentMap: Record<string, string> = {}
-  
-  try {
-    const contentSections = await db.getContentSections()
-    contentMap = contentSections.reduce((acc, section) => {
-      acc[section.section_name] = section.content
-      return acc
-    }, {} as Record<string, string>)
-  } catch (error) {
-    console.log('Database not available, using default content')
-  }
+export default function HomePage() {
+  // For now, we'll use static content since client components can't use async/await
+  const contentMap: Record<string, string> = {}
   return (
     <div className="min-h-screen">
       <Header />
@@ -56,15 +48,17 @@ export default async function HomePage() {
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="text-center">
-              <img 
+              <Image 
                 src="https://instasize.com/p/8118536984dd76c4837dbe798fe7d8526f318239167f522a034ae5462ba1ce6f" 
                 alt="The One You Need Album Cover"
-                className="w-64 h-64 object-cover rounded-lg mx-auto mb-6"
+                width={256}
+                height={256}
+                className="object-cover rounded-lg mx-auto mb-6"
               />
             </div>
             <div className="text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/mercantile#promotion" className="gold-button">
+                <a href="/mercantile" className="gold-button">
                   View In Mercantile
                 </a>
               </div>
@@ -79,10 +73,12 @@ export default async function HomePage() {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center">
-              <img 
+              <Image 
                 src="https://instasize.com/p/9c178832ed80a5c3d6c9e4896e7553e61c8f423769d7a5322d2a118062b2e0c0" 
                 alt="George McLarry"
-                className="w-full h-64 object-cover rounded-lg mb-6"
+                width={400}
+                height={256}
+                className="object-cover rounded-lg mb-6"
               />
             </div>
             <div>
