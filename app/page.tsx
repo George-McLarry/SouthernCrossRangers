@@ -1,8 +1,21 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
+import { db } from '@/lib/database'
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Fetch content from database with fallback
+  let contentMap: Record<string, string> = {}
+  
+  try {
+    const contentSections = await db.getContentSections()
+    contentMap = contentSections.reduce((acc, section) => {
+      acc[section.section_name] = section.content
+      return acc
+    }, {} as Record<string, string>)
+  } catch (error) {
+    console.log('Database not available, using default content')
+  }
   return (
     <div className="min-h-screen">
       <Header />
@@ -10,55 +23,49 @@ export default function HomePage() {
       <main>
         {/* Hero Section */}
         <ParchmentSection>
-          <h1 className="header-1 text-4xl md:text-6xl mb-6">
-            Welcome to Southern Cross Rangers
+          <h1 className="header-1 text-4xl md:text-6xl mb-6 text-center">
+            What's All This?
           </h1>
-          <h2 className="header-2 text-2xl md:text-3xl mb-6">
-            Authentic Country Music from the Heart of Tasmania
+          <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
+            Welcome, I'm glad you asked!
           </h2>
-          <p className="body-text text-lg md:text-xl mb-8">
-            Experience the raw beauty of Tasmanian landscapes through our music. 
-            Every song tells a story of the land, the people, and the spirit that makes Tasmania special.
+          <p className="body-text text-lg md:text-xl mb-8 text-center">
+            This website was built with the intention of keeping you updated and entertained with the latest news, songs, projects and merchandise! Feel free to join our growing family of friends and fans of real country music!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/music" className="gold-button">
-              🎵 Listen to Our Music
-            </a>
-            <a href="/events" className="gold-button">
-              📅 Upcoming Events
-            </a>
+            <button 
+              onClick={() => document.getElementById('newsletter-modal')?.classList.remove('hidden')}
+              className="gold-button"
+              style={{ color: '#5d4037', textShadow: 'none' }}
+            >
+              Join Our Family!
+            </button>
           </div>
         </ParchmentSection>
 
         {/* Promotion Section */}
         <ParchmentSection>
-          <h2 className="header-2 text-3xl md:text-4xl mb-6">
-            New Album: "The One You Need"
+          <h1 className="header-1 text-3xl md:text-4xl mb-6 text-center">
+            Promotion Section
+          </h1>
+          <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
+            Take a look at our latest project!
           </h2>
+          <p className="body-text text-lg mb-8 text-center">
+            This past month I have been working hard on building this website, of course, but more than that, I have finally recorded my very first album! I am so excited to share it with you, I hope you enjoy it!
+          </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="text-center">
-              <div className="w-64 h-64 bg-gradient-to-br from-gold to-gold-dark rounded-lg mx-auto mb-6 flex items-center justify-center">
-                <span className="text-6xl">🎵</span>
-              </div>
+              <img 
+                src="https://instasize.com/p/8118536984dd76c4837dbe798fe7d8526f318239167f522a034ae5462ba1ce6f" 
+                alt="The One You Need Album Cover"
+                className="w-64 h-64 object-cover rounded-lg mx-auto mb-6"
+              />
             </div>
-            <div>
-              <p className="body-text text-lg mb-6">
-                Our debut album featuring 10 authentic country tracks from the heart of Tasmania. 
-                Each song tells a story of the land, the people, and the spirit that makes Tasmania special.
-              </p>
-              <div className="flex items-center space-x-4 mb-6">
-                <span className="header-1 text-3xl">$20 AUD</span>
-                <span className="body-text line-through">$25 AUD</span>
-                <span className="bg-gold text-text-dark px-2 py-1 rounded text-sm font-semibold">
-                  Save $5
-                </span>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/mercantile" className="gold-button">
-                  🛒 Buy Now - $20 AUD
-                </a>
-                <a href="/music" className="gold-button">
-                  🎧 Preview Tracks
+            <div className="text-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/mercantile#promotion" className="gold-button">
+                  View In Mercantile
                 </a>
               </div>
             </div>
@@ -67,134 +74,74 @@ export default function HomePage() {
 
         {/* About Section */}
         <ParchmentSection>
-          <h2 className="header-2 text-3xl md:text-4xl mb-6">
-            About Southern Cross Rangers
-          </h2>
+          <h1 className="header-1 text-3xl md:text-4xl mb-6 text-center">
+            About
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="text-center">
+              <img 
+                src="https://instasize.com/p/9c178832ed80a5c3d6c9e4896e7553e61c8f423769d7a5322d2a118062b2e0c0" 
+                alt="George McLarry"
+                className="w-full h-64 object-cover rounded-lg mb-6"
+              />
+            </div>
             <div>
               <p className="body-text text-lg mb-6">
-                We are a country music band from Tasmania, Australia, dedicated to preserving and sharing 
-                the authentic sounds of our homeland. Our music is inspired by the rugged beauty of Tasmania's 
-                landscapes, the resilience of its people, and the rich heritage of Australian country music.
-              </p>
-              <p className="body-text text-lg mb-6">
-                From the rolling hills of the Midlands to the wild coastlines of the West Coast, 
-                our songs capture the essence of what it means to be Tasmanian.
+                Howdy, I am George McLarry!<br/><br/>
+                As some of you may know, I have a passion for real country music. For those who are curious about how I got into it in the first place ~ The simple answer is "I don't know". I can't remember exactly what first got me into it, but I do know that I have been listening to country music since before I knew that different genres were a thing. There was always something special about it for me. and now more than ever, country music continues to touch my heart! My goal is to help bring back real country music - songs for entertainment, for families, for the "little man" and for God! So Thank you for being part of my journey. Let's grow together, it's an exciting road!
               </p>
             </div>
-            <div className="text-center">
-              <div className="w-full h-64 bg-gradient-to-br from-gold to-gold-dark rounded-lg mb-6 flex items-center justify-center">
-                <span className="text-6xl">🎸</span>
-              </div>
-              <h3 className="header-2 text-xl mb-4">Our Story</h3>
-              <p className="body-text">
-                Founded in the heart of Tasmania, we bring authentic country music to the world.
-              </p>
-            </div>
-          </div>
-          <div className="text-center mt-8">
-            <a href="/library" className="gold-button">
-              Learn More About Us
-            </a>
           </div>
         </ParchmentSection>
 
         {/* Contact Section */}
         <ParchmentSection>
-          <h2 className="header-2 text-3xl md:text-4xl mb-6">
-            Get in Touch
+          <h1 className="header-1 text-3xl md:text-4xl mb-6 text-center">
+            Contact George!
+          </h1>
+          <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
+            Letters and Such
           </h2>
-          <p className="body-text text-lg mb-8">
-            Want to book us for an event? Have a question about our music? 
-            We'd love to hear from you!
+          <p className="body-text text-lg mb-8 text-center">
+            I never had computers growing up, and phones were far from my mind! I used to write letters to stay connected with friends, and up till now it is my favourite means of contact. If you fancy getting in touch this way, simply contact me through the form box below and entrust me with your mailing address, I will send a letter your way! For those who are too far or would prefer to keep it digital, simply leave out your address and just fill in your email and nickname. I look forward to hearing from you either way!
           </p>
           <div className="max-w-md mx-auto space-y-4">
             <input
               type="text"
-              placeholder="Your Name"
-              className="w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
-              style={{
-                backgroundColor: '#f5f1e8',
-                color: '#3e2723',
-                fontFamily: 'Georgia, serif'
-              }}
+              placeholder="Nickname"
+              className="form-input w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
             />
             <input
               type="email"
-              placeholder="Your Email"
-              className="w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
-              style={{
-                backgroundColor: '#f5f1e8',
-                color: '#3e2723',
-                fontFamily: 'Georgia, serif'
-              }}
+              placeholder="Email Address"
+              className="form-input w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
             />
-            <textarea
-              placeholder="Your Message"
-              rows={4}
-              className="w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors resize-none"
-              style={{
-                backgroundColor: '#f5f1e8',
-                color: '#3e2723',
-                fontFamily: 'Georgia, serif'
-              }}
-            />
-            <button className="gold-button w-full">
-              📧 Send Message
-            </button>
-          </div>
-        </ParchmentSection>
-
-        {/* Newsletter Signup */}
-        <ParchmentSection>
-          <h2 className="header-2 text-3xl md:text-4xl mb-6">
-            Join Our Family
-          </h2>
-          <p className="body-text text-lg mb-8">
-            Get exclusive updates, new music releases, and behind-the-scenes content 
-            delivered straight to your inbox. Be the first to know about our latest adventures!
-          </p>
-          <div className="max-w-md mx-auto space-y-4">
             <input
               type="text"
-              placeholder="Your First Name"
-              className="w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
-              style={{
-                backgroundColor: '#f5f1e8',
-                color: '#3e2723',
-                fontFamily: 'Georgia, serif'
-              }}
+              placeholder="Postal Address (Optional)"
+              className="form-input w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
             />
-            <input
-              type="email"
-              placeholder="Your Email Address"
-              className="w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
-              style={{
-                backgroundColor: '#f5f1e8',
-                color: '#3e2723',
-                fontFamily: 'Georgia, serif'
-              }}
-            />
-            <button className="gold-button w-full">
-              🎵 Join Our Family
+            <button 
+              onClick={() => document.getElementById('newsletter-modal')?.classList.remove('hidden')}
+              className="gold-button w-full"
+            >
+              Contact George!
             </button>
           </div>
         </ParchmentSection>
 
-        {/* Credit Section */}
+        {/* Credits Section */}
         <ParchmentSection>
-          <h2 className="header-2 text-3xl md:text-4xl mb-6">
-            Thank You
+          <h1 className="header-1 text-3xl md:text-4xl mb-6 text-center">
+            Credits to:
+          </h1>
+          <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
+            The dear visitor and supporter of this little endeavour of mine – your support means the world to me!
           </h2>
-          <p className="body-text text-lg mb-8">
-            Thank you for supporting independent Australian country music. 
-            Your support helps us continue to create and share the music we love.
+          <p className="body-text text-lg mb-8 text-center">
+            My dear family, for their ongoing support, advice, and patience.<br/><br/>
+            Last and most of all, the Lord! All praise and glory to Him, without whom nothing is possible!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#footer" className="gold-button">
-              Follow Us on Social Media
-            </a>
-          </div>
         </ParchmentSection>
       </main>
 

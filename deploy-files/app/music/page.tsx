@@ -35,12 +35,16 @@ export default async function MusicPage() {
       
       <main>
         <ParchmentSection>
-          <h1 className="header-1 text-4xl md:text-6xl mb-6 text-center">
-            The Jukebox
+          <h1 className="header-1 text-4xl md:text-6xl mb-6">
+            Our Music
           </h1>
-          <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
-            Welcome! I hope you enjoy our selection of country songs!
+          <h2 className="header-2 text-2xl md:text-3xl mb-6">
+            Authentic Country Music from the Heart of Tasmania
           </h2>
+          <p className="body-text text-lg md:text-xl mb-8">
+            Experience the raw beauty of Tasmanian landscapes through our music. 
+            Every song tells a story of the land, the people, and the spirit that makes Tasmania special.
+          </p>
         </ParchmentSection>
 
         <ParchmentSection>
@@ -57,8 +61,8 @@ export default async function MusicPage() {
         </ParchmentSection>
 
         <ParchmentSection>
-          <h2 className="header-2 text-3xl md:text-4xl mb-8 text-center">
-            Playlist
+          <h2 className="header-2 text-3xl md:text-4xl mb-8">
+            Track Listing
           </h2>
           <div className="space-y-4">
             {musicTracks.length > 0 ? (
