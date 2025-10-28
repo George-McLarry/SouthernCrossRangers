@@ -1,21 +1,13 @@
+'use client'
+
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
 import { db } from '@/lib/database'
 
-export default async function HomePage() {
-  // Fetch content from database with fallback
-  let contentMap: Record<string, string> = {}
-  
-  try {
-    const contentSections = await db.getContentSections()
-    contentMap = contentSections.reduce((acc, section) => {
-      acc[section.section_name] = section.content
-      return acc
-    }, {} as Record<string, string>)
-  } catch (error) {
-    console.log('Database not available, using default content')
-  }
+export default function HomePage() {
+  // For now, we'll use static content since client components can't use async/await
+  const contentMap: Record<string, string> = {}
   return (
     <div className="min-h-screen">
       <Header />
@@ -64,7 +56,7 @@ export default async function HomePage() {
             </div>
             <div className="text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/mercantile#promotion" className="gold-button">
+                <a href="/mercantile" className="gold-button">
                   View In Mercantile
                 </a>
               </div>

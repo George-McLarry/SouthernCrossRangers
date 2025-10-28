@@ -111,7 +111,7 @@ export default function MercantilePage() {
           </div>
         </ParchmentSection>
 
-        <ParchmentSection id="promotion">
+        <ParchmentSection>
           <h1 className="header-1 text-3xl md:text-4xl mb-6 text-center">
             Promotion Section
           </h1>

@@ -5,11 +5,12 @@ import { ReactNode } from 'react'
 interface ParchmentSectionProps {
   children: ReactNode
   className?: string
+  id?: string
 }
 
-export function ParchmentSection({ children, className = '' }: ParchmentSectionProps) {
+export function ParchmentSection({ children, className = '', id }: ParchmentSectionProps) {
   return (
-    <div className={`parchment-section ${className}`}>
+    <div id={id} className={`parchment-section ${className}`}>
       {children}
     </div>
   )
