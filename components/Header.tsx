@@ -3,11 +3,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { NewsletterModal } from './NewsletterModal'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [showNewsletterModal, setShowNewsletterModal] = useState(false)
   const pathname = usePathname()
 
   const baseNavItems = [
@@ -67,8 +65,10 @@ export function Header() {
           ))}
           
           {/* Join Our Family CTA Button */}
-          <button
-            onClick={() => setShowNewsletterModal(true)}
+          <a
+            href="https://southern-cross-rangers.kit.com/a07736e30e"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 rounded-lg font-bold text-sm transition-all hover:scale-105"
             style={{
               background: 'linear-gradient(145deg, #FFD700 0%, #FFE55C 25%, #FFD700 50%, #FFE55C 75%, #FFD700 100%)',
@@ -76,11 +76,13 @@ export function Header() {
               textShadow: 'none',
               border: '2px solid #b8860b',
               boxShadow: '0 4px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5)',
-              fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive"
+              fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive",
+              textDecoration: 'none',
+              display: 'inline-block'
             }}
           >
             Join Our Family!
-          </button>
+          </a>
         </nav>
 
         <div className="md:hidden flex justify-end py-2">
@@ -115,11 +117,11 @@ export function Header() {
             ))}
             
             {/* Mobile Join Our Family CTA Button */}
-            <button
-              onClick={() => {
-                setShowNewsletterModal(true)
-                setIsMenuOpen(false)
-              }}
+            <a
+              href="https://southern-cross-rangers.kit.com/a07736e30e"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
               className="px-4 py-2 rounded-lg font-bold text-sm transition-all hover:scale-105 mt-2"
               style={{
                 background: 'linear-gradient(145deg, #FFD700 0%, #FFE55C 25%, #FFD700 50%, #FFE55C 75%, #FFD700 100%)',
@@ -127,20 +129,16 @@ export function Header() {
                 textShadow: 'none',
                 border: '2px solid #b8860b',
                 boxShadow: '0 4px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5)',
-                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive"
+                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive",
+                textDecoration: 'none',
+                display: 'inline-block'
               }}
             >
               Join Our Family!
-            </button>
+            </a>
           </nav>
         )}
       </div>
-      
-      {/* Newsletter Modal */}
-      <NewsletterModal 
-        isOpen={showNewsletterModal} 
-        onClose={() => setShowNewsletterModal(false)} 
-      />
     </header>
   )
 }
