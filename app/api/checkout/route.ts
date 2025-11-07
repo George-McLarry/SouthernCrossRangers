@@ -33,14 +33,17 @@ export async function POST(request: NextRequest) {
         quantity: item.quantity,
       })),
       mode: 'payment',
-      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/mercantile?success=true`,
-      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/mercantile?canceled=true`,
-      shipping_address_collection: {
-        allowed_countries: ['AU', 'US', 'CA', 'GB', 'NZ'],
-      },
-      billing_address_collection: 'required',
+      success_url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/purchase-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/mercantile?canceled=true`,
+      billing_address_collection: 'auto',
       metadata: {
         items: JSON.stringify(items),
+        app_url: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+      },
+      payment_intent_data: {
+        metadata: {
+          items: JSON.stringify(items),
+        },
       },
     })
 

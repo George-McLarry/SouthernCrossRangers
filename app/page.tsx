@@ -1,18 +1,20 @@
 'use client'
 
+import { useState } from 'react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
 import Image from 'next/image'
+import { ContactModal } from '@/components/ContactModal'
 
 export default function HomePage() {
-  // For now, we'll use static content since client components can't use async/await
-  const contentMap: Record<string, string> = {}
+  const [showContactModal, setShowContactModal] = useState(false)
+
   return (
-    <div className="min-h-screen">
+    <div className="flex flex-col min-h-full flex-grow">
       <Header />
       
-      <main>
+      <main className="flex-grow">
         {/* Hero Section */}
         <ParchmentSection>
           <h1 className="header-1 text-4xl md:text-6xl mb-6 text-center">
@@ -25,13 +27,15 @@ export default function HomePage() {
             This website was built with the intention of keeping you updated and entertained with the latest news, songs, projects and merchandise! Feel free to join our growing family of friends and fans of real country music!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => document.getElementById('newsletter-modal')?.classList.remove('hidden')}
-              className="gold-button"
-              style={{ color: '#5d4037', textShadow: 'none' }}
+            <a 
+              href="https://southern-cross-rangers.kit.com/a07736e30e"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gold-button text-center"
+              style={{ color: '#5d4037', textShadow: 'none', textDecoration: 'none', display: 'inline-block' }}
             >
               Join Our Family!
-            </button>
+            </a>
           </div>
         </ParchmentSection>
 
@@ -49,10 +53,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="text-center">
               <Image 
-                src="https://instasize.com/p/8118536984dd76c4837dbe798fe7d8526f318239167f522a034ae5462ba1ce6f" 
+                src="/images/The One You Need Album Cover.jpg" 
                 alt="The One You Need Album Cover"
-                width={256}
-                height={256}
+                width={512}
+                height={512}
                 className="object-cover rounded-lg mx-auto mb-6"
               />
             </div>
@@ -74,11 +78,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="text-center">
               <Image 
-                src="https://instasize.com/p/9c178832ed80a5c3d6c9e4896e7553e61c8f423769d7a5322d2a118062b2e0c0" 
+                src="/images/George McLarry 2025.jpeg" 
                 alt="George McLarry"
                 width={400}
-                height={256}
-                className="object-cover rounded-lg mb-6"
+                height={400}
+                className="object-cover rounded-lg mb-6 mx-auto"
               />
             </div>
             <div>
@@ -101,27 +105,13 @@ export default function HomePage() {
           <p className="body-text text-lg mb-8 text-center">
             I never had computers growing up, and phones were far from my mind! I used to write letters to stay connected with friends, and up till now it is my favourite means of contact. If you fancy getting in touch this way, simply contact me through the form box below and entrust me with your mailing address, I will send a letter your way! For those who are too far or would prefer to keep it digital, simply leave out your address and just fill in your email and nickname. I look forward to hearing from you either way!
           </p>
-          <div className="max-w-md mx-auto space-y-4">
-            <input
-              type="text"
-              placeholder="Nickname"
-              className="form-input w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
-            />
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="form-input w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
-            />
-            <input
-              type="text"
-              placeholder="Postal Address (Optional)"
-              className="form-input w-full px-4 py-3 border-2 border-parchment-border rounded-lg focus:outline-none focus:border-gold transition-colors"
-            />
+          <div className="text-center">
             <button 
-              onClick={() => document.getElementById('newsletter-modal')?.classList.remove('hidden')}
-              className="gold-button w-full"
+              onClick={() => setShowContactModal(true)}
+              className="gold-button"
+              style={{ color: '#5d4037', textShadow: 'none' }}
             >
-              Contact George!
+              Send Message!
             </button>
           </div>
         </ParchmentSection>
@@ -142,6 +132,11 @@ export default function HomePage() {
       </main>
 
       <Footer />
+      
+      <ContactModal 
+        isOpen={showContactModal} 
+        onClose={() => setShowContactModal(false)} 
+      />
     </div>
   )
 }

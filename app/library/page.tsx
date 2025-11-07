@@ -1,13 +1,14 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
+import { LyricsList } from '@/components/LyricsList'
 
 export default function LibraryPage() {
   return (
-    <div className="min-h-screen">
+    <div className="flex flex-col min-h-full flex-grow">
       <Header />
       
-      <main>
+      <main className="flex-grow">
         <ParchmentSection>
           <h1 className="header-1 text-4xl md:text-6xl mb-6 text-center">
             Library
@@ -28,9 +29,18 @@ export default function LibraryPage() {
             <p className="body-text text-lg mb-8">
               <em>Newsletter articles will be added here as they become available.</em>
             </p>
-            <button className="gold-button">
+            <a 
+              href="https://southern-cross-rangers.kit.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gold-button"
+              style={{ color: '#5d4037', textShadow: 'none', textDecoration: 'none', display: 'inline-block' }}
+            >
               📰 Browse Newsletters
-            </button>
+            </a>
+            <p className="body-text text-sm mt-4 text-gray-600">
+              <em>If the archive doesn't load, try: <a href="https://southern-cross-rangers.kit.com/archive" target="_blank" rel="noopener noreferrer" className="underline">/archive</a> or check your ConvertKit dashboard.</em>
+            </p>
           </div>
         </ParchmentSection>
 
@@ -41,13 +51,8 @@ export default function LibraryPage() {
           <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
             Finally find out what your favourite songs really mean!
           </h2>
-          <div className="text-center">
-            <p className="body-text text-lg mb-8">
-              <em>Song lyrics and their meanings will be added here.</em>
-            </p>
-            <button className="gold-button">
-              🎵 Browse Lyrics
-            </button>
+          <div className="mt-8">
+            <LyricsList />
           </div>
         </ParchmentSection>
 
