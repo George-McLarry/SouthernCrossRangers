@@ -26,9 +26,6 @@ export default function LibraryPage() {
             Read the latest news, or travel back in time to when it all began…..
           </h2>
           <div className="text-center">
-            <p className="body-text text-lg mb-8">
-              <em>Newsletter articles will be added here as they become available.</em>
-            </p>
             <a 
               href="https://southern-cross-rangers.kit.com"
               target="_blank"
