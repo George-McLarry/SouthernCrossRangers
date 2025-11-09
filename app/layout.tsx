@@ -14,10 +14,25 @@ const uncialAntiqua = Uncial_Antiqua({ weight: '400', subsets: ['latin'], variab
 export const metadata: Metadata = {
   title: 'Southern Cross Rangers - Authentic Country Music from Tasmania',
   description: 'Experience the raw beauty of Tasmanian landscapes through our music. Every song tells a story of the land, the people, and the spirit that makes Tasmania special.',
+  keywords: [
+    'Country Music',
+    'Real Country Music',
+    'George McLarry',
+    'Southern Cross Rangers',
+    'Music',
+    'Music Bands',
+    'Australian Country',
+    'Australian Country Music',
+    'Tasmania',
+    'Tasmanian Country Music',
+    'Cygnet Music',
+    'Cygnet Country Music'
+  ],
   icons: {
     icon: '/images/final_logo_transparent.png',
     apple: '/images/final_logo_transparent.png',
   },
+  manifest: '/manifest.webmanifest',
 }
 
 export default function RootLayout({
