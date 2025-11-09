@@ -25,7 +25,7 @@ module.exports = {
         'off-white-light': '#f5f1e8',
       },
       fontFamily: {
-        'rye': ['Rye', 'Smokum', 'Vast Shadow', 'cursive'],
+        'rye': ['var(--font-rye)', 'var(--font-smokum)', 'var(--font-vast-shadow)', 'var(--font-cinzel)', 'var(--font-uncial-antiqua)', 'cursive'],
         'georgia': ['Georgia', 'Times New Roman', 'serif'],
         'body': ['Georgia', 'Palatino Linotype', 'Book Antiqua', 'serif'],
       },

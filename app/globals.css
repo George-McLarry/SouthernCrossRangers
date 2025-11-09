@@ -1,12 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Rye:wght@400&family=Smokum:wght@400&family=Vast+Shadow:wght@400&family=Cinzel:wght@400;500;600&family=Uncial+Antiqua&family=Georgia:wght@400;600&display=swap');
-
-/* Preload critical fonts */
-@font-face {
-  font-family: 'Rye';
-  src: url('https://fonts.gstatic.com/s/rye/v13/r05XGLJT86YzEZv.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -63,7 +54,7 @@
 @layer components {
   /* Header 1 and Titles - WILD WEST FONT with brown color */
   h1.header-1, .header-1 {
-    font-family: 'Rye', 'Smokum', 'Vast Shadow', 'Cinzel', 'Uncial Antiqua', 'Western', 'Cowboy', cursive !important;
+    font-family: var(--font-rye), var(--font-smokum), var(--font-vast-shadow), var(--font-cinzel), var(--font-uncial-antiqua), 'Western', 'Cowboy', cursive !important;
     font-weight: 400 !important;
     color: #5d4037 !important;
     text-align: center !important;
@@ -97,13 +88,12 @@
     border: 3px solid #c4a57b;
     border-radius: 8px;
     box-shadow: 
-      0 4px 8px rgba(0,0,0,0.2),
-      inset 0 1px 0 rgba(255,255,255,0.3);
-    padding: 1rem;
-    margin: 1rem auto;
-    width: 95%;
-    max-width: 1200px;
-    min-height: fit-content;
+      0px 4px 6px rgba(0, 0, 0, 0.1),
+      inset 0px 2px 0px rgba(255, 249, 239, 0.5);
+    padding: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 960px;
     position: relative;
   }
 

@@ -2,7 +2,13 @@
 
 import { useState } from 'react'
 import { useCart } from './CartProvider'
-import { createCheckoutSession, formatPrice } from '@/lib/stripe'
+
+const formatPrice = (price: number, currency: string = 'AUD') => {
+  return new Intl.NumberFormat('en-AU', {
+    style: 'currency',
+    currency,
+  }).format(price)
+}
 
 export function CartSidebar() {
   const { items, removeItem, updateQuantity, getTotalPrice, clearCart } = useCart()

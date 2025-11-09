@@ -28,7 +28,7 @@ export function Header() {
             <h1 
               className="header-1 text-responsive-title"
               style={{
-                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', 'Western', 'Cowboy', cursive",
+                fontFamily: "var(--font-rye), var(--font-smokum), var(--font-vast-shadow), 'Western', 'Cowboy', cursive",
                 fontWeight: '400',
                 fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                 color: '#FFD700',
@@ -76,7 +76,7 @@ export function Header() {
               textShadow: 'none',
               border: '2px solid #b8860b',
               boxShadow: '0 4px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5)',
-              fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive",
+              fontFamily: "var(--font-rye), var(--font-smokum), var(--font-vast-shadow), cursive",
               textDecoration: 'none',
               display: 'inline-block'
             }}
@@ -129,7 +129,7 @@ export function Header() {
                 textShadow: 'none',
                 border: '2px solid #b8860b',
                 boxShadow: '0 4px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.5)',
-                fontFamily: "'Rye', 'Smokum', 'Vast Shadow', cursive",
+                fontFamily: "var(--font-rye), var(--font-smokum), var(--font-vast-shadow), cursive",
                 textDecoration: 'none',
                 display: 'inline-block'
               }}

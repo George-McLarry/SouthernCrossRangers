@@ -3,6 +3,13 @@ import './globals.css'
 import { CartProvider } from '@/components/CartProvider'
 import { MusicPlayerProvider } from '@/components/MusicPlayerContext'
 import { GlobalMusicPlayer } from '@/components/GlobalMusicPlayer'
+import { Rye, Smokum, Vast_Shadow, Cinzel, Uncial_Antiqua } from 'next/font/google'
+
+const rye = Rye({ weight: '400', subsets: ['latin'], variable: '--font-rye' })
+const smokum = Smokum({ weight: '400', subsets: ['latin'], variable: '--font-smokum' })
+const vastShadow = Vast_Shadow({ weight: '400', subsets: ['latin'], variable: '--font-vast-shadow' })
+const cinzel = Cinzel({ weight: ['400', '500', '600'], subsets: ['latin'], variable: '--font-cinzel' })
+const uncialAntiqua = Uncial_Antiqua({ weight: '400', subsets: ['latin'], variable: '--font-uncial-antiqua' })
 
 export const metadata: Metadata = {
   title: 'Southern Cross Rangers - Authentic Country Music from Tasmania',
@@ -20,12 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preload" href="https://fonts.gstatic.com/s/rye/v13/r05XGLJT86YzEZv.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
-      </head>
-      <body className="flex flex-col min-h-screen h-full">
+      <body className={`${rye.variable} ${smokum.variable} ${vastShadow.variable} ${cinzel.variable} ${uncialAntiqua.variable} flex flex-col min-h-screen h-full`}>
         <CartProvider>
           <MusicPlayerProvider>
             <div className="flex flex-col flex-grow min-h-full">
