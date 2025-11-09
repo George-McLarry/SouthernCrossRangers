@@ -80,6 +80,9 @@ export default function MusicPage() {
           <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
             Welcome! I hope you enjoy our selection of country songs!
           </h2>
+          <p className="body-text text-base max-w-3xl mx-auto">
+            Originals unlock only after purchase. When you buy the album in Mercantile, Stripe collects your email and our system will send you a message titled <em>"Your Album Download - The One You Need"</em> with every track for download. Keep that email safe—you can re-download from it any time.
+          </p>
         </ParchmentSection>
 
         <ParchmentSection>
@@ -98,7 +101,7 @@ export default function MusicPage() {
             Sample George McLarry's originals here! (Full Albums may be purchased in Mercantile!)
           </p>
           <p className="body-text text-base mb-4 text-center">
-            Once you purchase the full album in Mercantile, all {originalTracksCount} original tracks will unlock here for streaming and download.
+            Once you purchase the full album in Mercantile, all {originalTracksCount} original tracks will unlock here for streaming and download. Until then, they stay hidden so only paying supporters receive the full experience.
           </p>
           <div className="flex justify-center">
             <a href="/mercantile" className="gold-button" style={{ textDecoration: 'none', color: '#5d4037' }}>

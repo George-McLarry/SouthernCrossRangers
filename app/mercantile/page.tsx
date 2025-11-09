@@ -29,7 +29,7 @@ export default function MercantilePage() {
 
         <ParchmentSection>
           <h1 className="header-1 text-3xl md:text-4xl mb-6 text-center">
-            Promotion Section
+            What's New?
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="text-center">
@@ -46,7 +46,11 @@ export default function MercantilePage() {
                 The One You Need – Album!
               </h2>
               <p className="body-text text-lg mb-6">
-                Get George McLarry's very first all original 10 song album! Stock is limited so be sure to grab yours now!
+                Get George McLarry's very first all original 10 song album! Once you purchase, Stripe will collect your email address and we'll send the full download bundle straight to that inbox.
+              </p>
+              <p className="body-text text-base mb-4">
+                ✅ After checkout you will receive an email titled <em>"Your Album Download - The One You Need"</em> with permanent download links.<br />
+                ✅ Keep the email safe so you can re-download anytime.
               </p>
               
               {/* Description Dropdown */}

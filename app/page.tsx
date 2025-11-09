@@ -42,7 +42,7 @@ export default function HomePage() {
         {/* Promotion Section */}
         <ParchmentSection>
           <h1 className="header-1 text-3xl md:text-4xl mb-6 text-center">
-            Promotion Section
+            What's New?
           </h1>
           <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
             Take a look at our latest project!
