@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { ParchmentSection } from '@/components/ParchmentSection'
 import { useMusicPlayer } from '@/components/MusicPlayerContext'
+import { MusicPlayer } from '@/components/MusicPlayer'
 
 interface Track {
   id: string
@@ -44,6 +45,15 @@ export default function MusicPage() {
 
     return [...originalTracks, ...coverTracks]
   }, [])
+
+  useEffect(() => {
+    if (playerTracksMemo.length > 0) {
+      setTracks(playerTracksMemo)
+      setCurrentTrackIndex(0, false)
+      setSelectedTrack(playerTracksMemo[0].id)
+      setIsPlayerVisible(false)
+    }
+  }, [playerTracksMemo, setTracks, setCurrentTrackIndex, setIsPlayerVisible])
 
   const originalTracks = playerTracksMemo.filter(t => t.isOriginal)
   const coversByArtist = playerTracksMemo
@@ -97,6 +107,13 @@ export default function MusicPage() {
           <h2 className="header-2 text-2xl md:text-3xl mb-6 text-center">
             Welcome! I hope you enjoy our selection of country songs!
           </h2>
+        </ParchmentSection>
+
+        <ParchmentSection>
+          <h2 className="header-1 text-3xl md:text-4xl mb-6 text-center">
+            Now Playing
+          </h2>
+          <MusicPlayer />
         </ParchmentSection>
 
         {/* George McLarry Section */}
