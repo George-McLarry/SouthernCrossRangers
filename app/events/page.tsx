@@ -24,8 +24,19 @@ export default function EventsPage() {
       date: new Date('2026-02-04'),
       time: '8:00pm',
       location: 'Country Gold Club, Claremont, Tasmania',
-      description: 'We will be playing live for all you folks at the Country Gold Club, Claremont, Tasmania! Tickets are free! Just come, and feel free to have a bit of fun. $5 lucky door prizes and raffles! Keep an eye out for updates and more information, as plans may change before due date.',
+      description:
+        'We will be guest starring at the Country Gold Music Club in Claremont Tasmania on the above date! Drop by for a night of fun, music and dancing. Tickets are $5, lucky door prizes included! More Details coming soon.',
       image: '/images/Country Gold Music Club.png'
+    },
+    {
+      id: 'huonville-bowls-club',
+      title: 'Southern Cross Rangers Live at Huonville Bowls Club',
+      date: new Date('2026-02-08'),
+      time: '1:00pm - 4:00pm',
+      location: 'Huonville Bowls Club, Huonville, Tasmania',
+      description:
+        "We will be playing live for y'all at the Huonville Bowls Club! Come along for a great afternoon, hope to see you there! $10 entry.",
+      image: '/images/Line Dancing!.jpeg'
     },
     {
       id: 'cygnet-nov-2025',
@@ -80,14 +91,37 @@ export default function EventsPage() {
                   </div>
                   <p className="body-text mb-4">📍 Country Gold Club, Claremont, Tasmania</p>
                   <p className="body-text mb-4">
-                    We will be playing live for all you folks at the Country Gold Club, Claremont, Tasmania! Tickets are free! Just come, and feel free to have a bit of fun. $5 lucky door prizes and raffles! Keep an eye out for updates and more information, as plans may change before due date.
+                    We will be guest starring at the Country Gold Music Club in Claremont Tasmania on the above date! Drop by for a night of fun, music and dancing. Tickets are $5, lucky door prizes included! More Details coming soon.
                   </p>
-                  <div className="flex items-center justify-between">
-                    <div className="text-left">
-                      <p className="header-2 text-xl">FREE</p>
-                      <p className="body-text text-sm">Admission</p>
-                    </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Huonville Bowls Club Event */}
+            <div className="parchment-section">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-1">
+                  <div className="w-full h-64 relative bg-gray-200 rounded-lg overflow-hidden">
+                    <Image
+                      src="/images/Line Dancing!.jpeg"
+                      alt="Huonville Bowls Club"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                    />
                   </div>
+                </div>
+                <div className="lg:col-span-2">
+                  <h3 className="header-1 text-2xl mb-2">Southern Cross Rangers Live at Huonville Bowls Club</h3>
+                  <div className="flex items-center space-x-4 text-sm body-text mb-2">
+                    <span>📅 February 8, 2026</span>
+                    <span>🕐 1:00pm - 4:00pm</span>
+                    <span className="bg-gold text-brown px-2 py-1 rounded text-xs">Live Performance</span>
+                  </div>
+                  <p className="body-text mb-4">📍 Huonville Bowls Club, Huonville, Tasmania</p>
+                  <p className="body-text mb-4">
+                    We will be playing live for y&apos;all at the Huonville Bowls Club! Come along for a great afternoon, hope to see you there! $10 entry.
+                  </p>
                 </div>
               </div>
             </div>
