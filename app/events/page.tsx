@@ -36,7 +36,7 @@ export default function EventsPage() {
       location: 'Huonville Bowls Club, Huonville, Tasmania',
       description:
         "We will be playing live for y'all at the Huonville Bowls Club! Come along for a great afternoon, hope to see you there! $10 entry.",
-      image: '/images/Bowls Club Huonville banner.png'
+      image: '/images/bowls-club-huonville-banner.png'
     },
     {
       id: 'cygnet-nov-2025',
@@ -103,7 +103,7 @@ export default function EventsPage() {
                 <div className="lg:col-span-1">
                   <div className="w-full h-64 relative bg-gray-200 rounded-lg overflow-hidden">
                     <Image
-                      src="/images/Bowls Club Huonville banner.png"
+                      src="/images/bowls-club-huonville-banner.png"
                       alt="Huonville Bowls Club"
                       fill
                       className="object-cover"
